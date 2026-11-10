@@ -1,0 +1,453 @@
+
+.employee-attendance-container {
+  width: 100%;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+/* Page heading */
+.attendance-page-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.attendance-page-heading h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 650;
+  color: #1e293b;
+}
+
+.attendance-page-heading p,
+.attendance-history-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* Summary cards */
+.attendance-summary-card {
+  height: 100%;
+  min-height: 115px;
+  border: 1px solid #e8edf3 !important;
+  border-radius: 10px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.attendance-summary-card .ant-card-body {
+  padding: 17px;
+}
+
+.attendance-summary-card h2 {
+  font-size: 25px;
+  color: #1e293b;
+  font-weight: 700;
+  margin: 8px 0 0;
+}
+
+.attendance-summary-icon {
+  position: absolute;
+  right: 18px;
+  top: 23px;
+  font-size: 25px;
+  color: #64748b;
+  opacity: 0.65;
+}
+
+.eod-submitted-card {
+  border-left: 4px solid #239b62 !important;
+}
+
+.eod-missing-card {
+  border-left: 4px solid #df5964 !important;
+}
+
+.working-time-card {
+  border-left: 4px solid #3984d6 !important;
+}
+
+/* History card */
+.attendance-history-card {
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.attendance-history-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.attendance-history-heading h3 {
+  font-size: 17px;
+  font-weight: 650;
+  color: #1e293b;
+  margin: 0 0 5px;
+}
+
+/* Filters */
+.attendance-filters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.attendance-search {
+  width: 280px;
+  height: 38px;
+  border-radius: 6px !important;
+}
+
+.attendance-date-range {
+  height: 38px;
+  border-radius: 6px !important;
+}
+
+.attendance-eod-filter {
+  width: 165px;
+}
+
+.attendance-eod-filter .ant-select-selector {
+  height: 38px !important;
+  display: flex;
+  align-items: center;
+  border-radius: 6px !important;
+}
+
+.attendance-filters .ant-btn {
+  height: 38px;
+  border-radius: 6px;
+}
+
+/* Export buttons */
+.excel-export-btn {
+  color: #16834b;
+  border-color: #b7ebc8;
+}
+
+.excel-export-btn:hover {
+  color: #16834b !important;
+  border-color: #16834b !important;
+}
+
+.pdf-export-btn {
+  color: #cf1322;
+  border-color: #ffa39e;
+}
+
+.pdf-export-btn:hover {
+  color: #cf1322 !important;
+  border-color: #cf1322 !important;
+}
+
+/* Active filter info */
+.attendance-filter-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  background: #f0f7ff;
+  border: 1px solid #d6e8ff;
+  border-radius: 6px;
+  color: #315b88;
+  font-size: 12px;
+}
+
+/* Table */
+.attendance-history-card .ant-table {
+  font-size: 13px;
+}
+
+.attendance-history-card .ant-table-thead > tr > th {
+  background: #f8fafc !important;
+  color: #475569;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.attendance-history-card .ant-table-tbody > tr > td {
+  padding: 13px 12px;
+  color: #475569;
+}
+
+.attendance-history-card .ant-table-tbody > tr:hover > td {
+  background: #f8fafc !important;
+}
+
+/* Expanded details */
+.attendance-expanded-details {
+  padding: 12px 15px;
+  background: #fafbfc;
+  border-radius: 8px;
+}
+
+.attendance-detail-section {
+  margin-bottom: 25px;
+}
+
+.attendance-detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.attendance-detail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.attendance-detail-heading h4 {
+  font-size: 14px;
+  font-weight: 650;
+  color: #334155;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .employee-attendance-container {
+    padding: 12px;
+  }
+
+  .attendance-page-heading,
+  .attendance-history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .attendance-history-card {
+    padding: 12px;
+  }
+
+  .attendance-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .attendance-search,
+  .attendance-date-range,
+  .attendance-eod-filter {
+    width: 100%;
+  }
+
+  .attendance-filters .ant-btn {
+    width: 100%;
+  }
+
+  .attendance-summary-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .attendance-summary-card h2 {
+    font-size: 21px;
+  }
+
+  .attendance-summary-icon {
+    right: 12px;
+    font-size: 20px;
+  }
+}
+
+/* ==========================================
+   EMPLOYEE ATTENDANCE - COMPLETE DARK MODE
+   ========================================== */
+
+/* Main page */
+html[data-theme="dark"] .employee-attendance-container {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+/* Page heading */
+html[data-theme="dark"] .attendance-page-heading h2 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .attendance-page-heading p,
+html[data-theme="dark"] .attendance-history-heading p {
+  color: #9ca3af !important;
+}
+
+/* Summary cards */
+html[data-theme="dark"] .attendance-summary-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-summary-card .ant-card-body {
+  background: transparent !important;
+}
+
+html[data-theme="dark"] .attendance-summary-card h2 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .attendance-summary-icon {
+  color: #94a3b8 !important;
+}
+
+/* History card */
+html[data-theme="dark"] .attendance-history-card {
+  background: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-history-heading h3 {
+  color: #f9fafb !important;
+}
+
+/* Filters */
+html[data-theme="dark"] .attendance-search,
+html[data-theme="dark"] .attendance-date-range,
+html[data-theme="dark"] .attendance-eod-filter .ant-select-selector {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-search input,
+html[data-theme="dark"] .attendance-date-range input,
+html[data-theme="dark"] .attendance-eod-filter .ant-select-selection-item,
+html[data-theme="dark"] .attendance-eod-filter .ant-select-selection-placeholder {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-search input::placeholder,
+html[data-theme="dark"] .attendance-date-range input::placeholder {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .attendance-eod-filter .ant-select-arrow,
+html[data-theme="dark"] .attendance-date-range .ant-picker-suffix {
+  color: #94a3b8 !important;
+}
+
+/* Export buttons */
+html[data-theme="dark"] .excel-export-btn {
+  background: #123c2b !important;
+  color: #86efac !important;
+  border-color: #166534 !important;
+}
+
+html[data-theme="dark"] .pdf-export-btn {
+  background: #451a1a !important;
+  color: #fca5a5 !important;
+  border-color: #991b1b !important;
+}
+
+/* Filter information */
+html[data-theme="dark"] .attendance-filter-info {
+  background: #172b45 !important;
+  border-color: #29476b !important;
+  color: #bfdbfe !important;
+}
+
+/* Table outer background */
+html[data-theme="dark"] .attendance-history-card .ant-table,
+html[data-theme="dark"] .attendance-history-card .ant-table-container,
+html[data-theme="dark"] .attendance-history-card .ant-table-content,
+html[data-theme="dark"] .attendance-history-card .ant-table-tbody {
+  background: #1f2937 !important;
+  color: #e5e7eb !important;
+}
+
+/* Table header */
+html[data-theme="dark"] .attendance-history-card .ant-table-thead > tr > th {
+  background: #273449 !important;
+  color: #e5e7eb !important;
+  border-bottom-color: #475569 !important;
+}
+
+/* Table body */
+html[data-theme="dark"] .attendance-history-card .ant-table-tbody > tr > td {
+  background: #1f2937 !important;
+  color: #d1d5db !important;
+  border-bottom-color: #374151 !important;
+}
+
+/* Table row hover */
+html[data-theme="dark"] .attendance-history-card .ant-table-tbody > tr:hover > td {
+  background: #334155 !important;
+  color: #ffffff !important;
+}
+
+/* Expanded row */
+html[data-theme="dark"] .attendance-history-card .ant-table-expanded-row > td {
+  background: #172033 !important;
+}
+
+/* Expanded details */
+html[data-theme="dark"] .attendance-expanded-details {
+  background: #273449 !important;
+  color: #e5e7eb !important;
+  border: 1px solid #374151;
+}
+
+html[data-theme="dark"] .attendance-detail-heading h4 {
+  color: #f9fafb !important;
+}
+
+/* Table pagination */
+html[data-theme="dark"] .attendance-history-card .ant-pagination-item {
+  background: #273449 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .attendance-history-card .ant-pagination-item a {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-history-card .ant-pagination-item-active {
+  border-color: #3b82f6 !important;
+}
+
+html[data-theme="dark"] .attendance-history-card .ant-pagination-prev button,
+html[data-theme="dark"] .attendance-history-card .ant-pagination-next button {
+  color: #cbd5e1 !important;
+  background: #273449 !important;
+  border-color: #475569 !important;
+}
+
+/* Empty table message */
+html[data-theme="dark"] .attendance-history-card .ant-empty-description {
+  color: #9ca3af !important;
+}
+
+/* Checkbox and table selection */
+html[data-theme="dark"] .attendance-history-card .ant-table-selection-column {
+  background: #1f2937 !important;
+}
+
+/* General text */
+html[data-theme="dark"] .attendance-history-card .ant-typography,
+html[data-theme="dark"] .attendance-history-card label {
+  color: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  html[data-theme="dark"] .employee-attendance-container {
+    background: #111827 !important;
+  }
+
+  html[data-theme="dark"] .attendance-history-card {
+    background: #1f2937 !important;
+  }
+}

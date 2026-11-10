@@ -1,0 +1,711 @@
+/* Main wrapper */
+.leave-calendar-wrapper {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Summary cards */
+.leave-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.leave-summary-card {
+  padding: 16px 20px;
+  border-radius: 9px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.summary-count {
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 7px;
+  color: #1e293b;
+}
+
+.pending-card {
+  border-left: 4px solid #f0ad32;
+}
+
+.approved-card {
+  border-left: 4px solid #22a06b;
+}
+
+.rejected-card {
+  border-left: 4px solid #e05260;
+}
+
+/* Calendar legend */
+.leave-calendar-legend {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.leave-calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.approved-dot {
+  background: #22a06b;
+}
+
+.pending-dot {
+  background: #e9a23b;
+}
+
+.rejected-dot {
+  background: #e05260;
+}
+
+/* Full calendar date boxes */
+.leave-calendar-wrapper .leave-calendar-date {
+  box-sizing: border-box;
+  height: 85px !important;
+  margin: 0 4px !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Approved leave */
+.leave-calendar-wrapper .leave-approved-date {
+  background-color: #d9f7e5 !important;
+  border: 1px solid #86d9a5 !important;
+}
+
+.leave-approved-date .ant-picker-calendar-date-value {
+  color: #176b38 !important;
+  font-weight: 600;
+}
+
+/* Pending leave */
+.leave-calendar-wrapper .leave-pending-date {
+  background-color: #fff7df !important;
+  border: 1px solid #f5d27a !important;
+}
+
+.leave-pending-date .ant-picker-calendar-date-value {
+  color: #946200 !important;
+  font-weight: 600;
+}
+
+/* Rejected leave */
+.leave-calendar-wrapper .leave-rejected-date {
+  background-color: #fff1f0 !important;
+  border: 1px solid #ffa39e !important;
+}
+
+.leave-rejected-date .ant-picker-calendar-date-value {
+  color: #cf1322 !important;
+  font-weight: 600;
+}
+
+/* Leave entry inside calendar */
+.leave-calendar-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3px 6px;
+  margin-top: 4px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.leave-chip-approved {
+  background: #b7ebc8;
+  color: #176b38;
+}
+
+.leave-chip-pending {
+  background: #ffe7a3;
+  color: #875900;
+}
+
+.leave-chip-rejected {
+  background: #ffccc7;
+  color: #a8071a;
+}
+
+.leave-chip-status {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Popover */
+.leave-popover-content {
+  min-width: 210px;
+  max-width: 280px;
+}
+
+.leave-popover-heading {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.leave-detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.leave-detail-row span,
+.leave-detail-reason span {
+  color: #64748b;
+}
+
+.leave-detail-row strong {
+  text-align: right;
+  color: #334155;
+}
+
+.status-text.approved {
+  color: #16834b;
+}
+
+.status-text.pending {
+  color: #b7791f;
+}
+
+.status-text.rejected {
+  color: #cf1322;
+}
+
+.leave-detail-reason {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 9px;
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+.leave-detail-reason p {
+  color: #334155;
+  margin: 5px 0 0;
+  word-break: break-word;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .leave-summary-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .leave-calendar-wrapper {
+    padding: 10px;
+  }
+
+  .leave-calendar-legend {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .leave-calendar-wrapper .leave-calendar-date {
+    margin: 0 !important;
+    padding: 4px !important;
+    height: 75px !important;
+  }
+
+  .leave-calendar-chip {
+    font-size: 9px;
+    padding: 2px 3px;
+  }
+}
+
+/* =========================================
+   LEAVE CALENDAR - BASE / LIGHT THEME
+========================================= */
+
+.leave-calendar-wrapper {
+  background: #ffffff;
+  color: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Summary cards */
+.leave-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.leave-summary-card {
+  padding: 16px 20px;
+  border-radius: 9px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.summary-count {
+  font-size: 27px;
+  font-weight: 700;
+  margin-top: 7px;
+  color: #1e293b;
+}
+
+.pending-card {
+  border-left: 4px solid #f0ad32;
+}
+
+.approved-card {
+  border-left: 4px solid #22a06b;
+}
+
+.rejected-card {
+  border-left: 4px solid #e05260;
+}
+
+/* Calendar legend */
+.leave-calendar-legend {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.leave-calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.approved-dot {
+  background: #22a06b;
+}
+
+.pending-dot {
+  background: #e9a23b;
+}
+
+.rejected-dot {
+  background: #e05260;
+}
+
+/* Calendar */
+.leave-calendar-wrapper .ant-picker-calendar {
+  background: transparent;
+  color: #1e293b;
+}
+
+.leave-calendar-wrapper .leave-calendar-date {
+  box-sizing: border-box;
+  height: 85px !important;
+  margin: 0 4px !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  transition: background-color 0.2s ease;
+}
+
+/* Approved leave */
+.leave-calendar-wrapper .leave-approved-date {
+  background-color: #d9f7e5 !important;
+  border: 1px solid #86d9a5 !important;
+}
+
+.leave-approved-date .ant-picker-calendar-date-value {
+  color: #176b38 !important;
+  font-weight: 600;
+}
+
+/* Pending leave */
+.leave-calendar-wrapper .leave-pending-date {
+  background-color: #fff7df !important;
+  border: 1px solid #f5d27a !important;
+}
+
+.leave-pending-date .ant-picker-calendar-date-value {
+  color: #946200 !important;
+  font-weight: 600;
+}
+
+/* Rejected leave */
+.leave-calendar-wrapper .leave-rejected-date {
+  background-color: #fff1f0 !important;
+  border: 1px solid #ffa39e !important;
+}
+
+.leave-rejected-date .ant-picker-calendar-date-value {
+  color: #cf1322 !important;
+  font-weight: 600;
+}
+
+/* Leave chips */
+.leave-calendar-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3px 6px;
+  margin-top: 4px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.leave-chip-approved {
+  background: #b7ebc8;
+  color: #176b38;
+}
+
+.leave-chip-pending {
+  background: #ffe7a3;
+  color: #875900;
+}
+
+.leave-chip-rejected {
+  background: #ffccc7;
+  color: #a8071a;
+}
+
+.leave-chip-status {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+/* Popover */
+.leave-popover-content {
+  min-width: 210px;
+  max-width: 280px;
+}
+
+.leave-popover-heading {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.leave-detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.leave-detail-row span,
+.leave-detail-reason span {
+  color: #64748b;
+}
+
+.leave-detail-row strong {
+  text-align: right;
+  color: #334155;
+}
+
+.status-text.approved {
+  color: #16834b;
+}
+
+.status-text.pending {
+  color: #b7791f;
+}
+
+.status-text.rejected {
+  color: #cf1322;
+}
+
+.leave-detail-reason {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 9px;
+  margin-top: 9px;
+  font-size: 12px;
+}
+
+.leave-detail-reason p {
+  color: #334155;
+  margin: 5px 0 0;
+  word-break: break-word;
+}
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+html[data-theme="dark"] .leave-calendar-wrapper {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-summary-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .summary-label {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .summary-count {
+  color: #f9fafb !important;
+}
+
+/* Legend */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-calendar-legend,
+html[data-theme="dark"] .leave-calendar-wrapper .leave-calendar-legend span {
+  color: #d1d5db !important;
+}
+
+/* Calendar background */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-panel {
+  background: #111827 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-content th {
+  color: #9ca3af !important;
+  background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-content td {
+  border-color: #374151 !important;
+}
+
+/* Calendar header */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header {
+  background: #111827 !important;
+  border-bottom: 1px solid #374151 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-select-selector {
+  background: #273449 !important;
+  border-color: #4b5563 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-select-selection-item {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-radio-button-wrapper {
+  background: #273449 !important;
+  color: #d1d5db !important;
+  border-color: #4b5563 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-radio-button-wrapper-checked {
+  background: #4f46e5 !important;
+  color: #ffffff !important;
+  border-color: #4f46e5 !important;
+}
+
+/* Calendar dates */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date-value {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date-content {
+  color: #d1d5db !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell:hover .ant-picker-calendar-date {
+  background: #273449 !important;
+  border-color: #6366f1 !important;
+}
+
+/* Today */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell-today .ant-picker-calendar-date {
+  border-color: #818cf8 !important;
+}
+
+/* Selected date */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell-selected .ant-picker-calendar-date {
+  background: #312e81 !important;
+  border-color: #6366f1 !important;
+}
+
+/* Preserve readable leave status colors */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-approved-date {
+  background: #123329 !important;
+  border-color: #166534 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-approved-date .ant-picker-calendar-date-value {
+  color: #86efac !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-pending-date {
+  background: #3b2d13 !important;
+  border-color: #92400e !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-pending-date .ant-picker-calendar-date-value {
+  color: #fcd34d !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-rejected-date {
+  background: #3b1d25 !important;
+  border-color: #991b1b !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-rejected-date .ant-picker-calendar-date-value {
+  color: #fca5a5 !important;
+}
+
+/* Chips */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-approved {
+  background: #14532d !important;
+  color: #bbf7d0 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-pending {
+  background: #713f12 !important;
+  color: #fde68a !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-rejected {
+  background: #7f1d1d !important;
+  color: #fecaca !important;
+}
+
+/* Popover - outside calendar wrapper */
+html[data-theme="dark"] .ant-popover .ant-popover-inner {
+  background: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-inner-content {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-arrow-content {
+  background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-popover-heading {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .leave-detail-row {
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .leave-detail-row span,
+html[data-theme="dark"] .leave-detail-reason span {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .leave-detail-row strong {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .leave-detail-reason {
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .leave-detail-reason p {
+  color: #d1d5db !important;
+  background: #273449 !important;
+}
+
+/* Popover status colors */
+html[data-theme="dark"] .leave-popover-content .status-text.approved {
+  color: #4ade80 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content .status-text.pending {
+  color: #fbbf24 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content .status-text.rejected {
+  color: #f87171 !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .leave-summary-cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .leave-calendar-wrapper {
+    padding: 10px;
+  }
+
+  .leave-calendar-legend {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .leave-calendar-wrapper .leave-calendar-date {
+    margin: 0 !important;
+    padding: 4px !important;
+    height: 75px !important;
+  }
+
+  .leave-calendar-chip {
+    font-size: 9px;
+    padding: 2px 3px;
+  }
+}

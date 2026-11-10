@@ -1,0 +1,782 @@
+/* =====================================================================
+   SBS Bela HRMS – design system
+   Loaded AFTER antd.css and App.css.
+   Everything is scoped under .ebs-app / .ebs-login so it also wins over
+   the less.js runtime theme that is injected later in <head>.
+   ===================================================================== */
+
+:root {
+  --ebs-brand: #c8242b;
+  --ebs-brand-dark: #a41d23;
+  --ebs-brand-soft: #fcebec;
+
+  --ebs-ink: #1b2430;
+  --ebs-text: #344054;
+  --ebs-muted: #667085;
+  --ebs-border: #e5e8ee;
+  --ebs-canvas: #f4f6fa;
+  --ebs-surface: #ffffff;
+  --ebs-surface-2: #f9fafb;
+
+  --ebs-sider: #141b26;
+  --ebs-sider-hover: #1e2836;
+  --ebs-sider-text: #aeb8c7;
+
+  --ebs-green: #12a06a;
+  --ebs-green-soft: #e6f6ef;
+  --ebs-amber: #d98a06;
+  --ebs-amber-soft: #fdf3e0;
+  --ebs-blue: #2563eb;
+  --ebs-blue-soft: #eaf1fe;
+  --ebs-violet: #7c3aed;
+  --ebs-violet-soft: #f1eafe;
+
+  --ebs-radius: 12px;
+  --ebs-radius-sm: 8px;
+  --ebs-shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --ebs-shadow-lg: 0 12px 32px rgba(16, 24, 40, 0.12);
+  --ebs-header-h: 64px;
+  --ebs-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+html[data-theme="dark"] {
+  --ebs-ink: #f2f4f7;
+  --ebs-text: #d0d5dd;
+  --ebs-muted: #98a2b3;
+  --ebs-border: #2a3443;
+  --ebs-canvas: #0e131b;
+  --ebs-surface: #161e2a;
+  --ebs-surface-2: #1b2433;
+  --ebs-brand-soft: #3a1b1e;
+  --ebs-green-soft: #11302a;
+  --ebs-amber-soft: #3a2c10;
+  --ebs-blue-soft: #14264a;
+  --ebs-violet-soft: #2a1d4a;
+  --ebs-sider: #0a0f16;
+  --ebs-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  margin: 0;
+  font-family: var(--ebs-font) !important;
+  background: var(--ebs-canvas) !important;
+  color: var(--ebs-text) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* the old global `button {}` rule (theme/GlobalStyles) must not leak into antd */
+.ebs-app .ant-btn,
+.ebs-login .ant-btn {
+  margin-top: 0;
+  font-family: var(--ebs-font);
+}
+
+/* ---------------------------------------------------------------- shell */
+.ebs-app.ant-layout {
+  min-height: 100vh;
+  background: var(--ebs-canvas);
+}
+
+.ebs-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--ebs-header-h);
+  line-height: normal;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--ebs-surface);
+  border-bottom: 1px solid var(--ebs-border);
+  box-shadow: var(--ebs-shadow);
+}
+
+.ebs-header-left,
+.ebs-header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ebs-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--ebs-radius-sm);
+  border: 1px solid var(--ebs-border);
+  background: var(--ebs-surface);
+  color: var(--ebs-text);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+.ebs-toggle:hover {
+  background: var(--ebs-surface-2);
+  color: var(--ebs-brand);
+}
+
+.ebs-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ebs-ink);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.ebs-brand img {
+  height: 30px;
+  width: auto;
+  border-radius: 6px;
+}
+.ebs-brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--ebs-brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+.ebs-brand span em {
+  font-style: normal;
+  color: var(--ebs-brand);
+}
+
+.ebs-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px 4px 4px;
+  border-radius: 999px;
+  border: 1px solid var(--ebs-border);
+  background: var(--ebs-surface);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.ebs-user:hover {
+  background: var(--ebs-surface-2);
+}
+.ebs-user-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+.ebs-user-name {
+  font-weight: 600;
+  color: var(--ebs-ink);
+  font-size: 13px;
+  text-transform: capitalize;
+}
+.ebs-user-role {
+  font-size: 11px;
+  color: var(--ebs-muted);
+  text-transform: capitalize;
+}
+
+/* sidebar */
+.ebs-app .ebs-sider.ant-layout-sider {
+  background: var(--ebs-sider);
+  position: sticky;
+  top: var(--ebs-header-h);
+  height: calc(100vh - var(--ebs-header-h));
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 40;
+}
+.ebs-app .ebs-sider .ant-layout-sider-children {
+  padding: 14px 10px;
+}
+.ebs-app .ebs-sider .ant-menu {
+  background: transparent;
+  border: 0;
+  color: var(--ebs-sider-text);
+}
+.ebs-app .ebs-sider .ant-menu-item {
+  height: 42px;
+  line-height: 42px;
+  margin: 2px 0;
+  border-radius: var(--ebs-radius-sm);
+  font-weight: 500;
+  color: var(--ebs-sider-text);
+}
+.ebs-app .ebs-sider .ant-menu-item .anticon {
+  font-size: 16px;
+}
+.ebs-app .ebs-sider .ant-menu-item:hover {
+  background: var(--ebs-sider-hover);
+  color: #fff;
+}
+.ebs-app .ebs-sider .ant-menu-item-selected,
+.ebs-app .ebs-sider .ant-menu-item-selected:hover {
+  background: var(--ebs-brand);
+  color: #fff;
+}
+.ebs-app .ebs-sider.ant-layout-sider-collapsed .ant-menu-item {
+  padding: 0 calc(50% - 8px);
+}
+
+.ebs-main {
+  min-width: 0;
+  background: var(--ebs-canvas);
+}
+.ebs-content {
+  padding: 24px 28px 8px;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+.ebs-footer {
+  text-align: center;
+  color: var(--ebs-muted);
+  font-size: 12px;
+  padding: 18px 0 22px;
+}
+
+/* ------------------------------------------------------------ page head */
+.ebs-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.ebs-page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ebs-ink);
+}
+.ebs-page-sub {
+  margin: 4px 0 0;
+  color: var(--ebs-muted);
+  font-size: 14px;
+}
+.ebs-breadcrumb {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+.ebs-datetime {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  border-radius: var(--ebs-radius-sm);
+  background: var(--ebs-surface);
+  border: 1px solid var(--ebs-border);
+  color: var(--ebs-text);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.ebs-datetime strong {
+  color: var(--ebs-ink);
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------- stat cards */
+.ebs-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.ebs-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  background: var(--ebs-surface);
+  border: 1px solid var(--ebs-border);
+  border-radius: var(--ebs-radius);
+  box-shadow: var(--ebs-shadow);
+  min-height: 98px;
+}
+.ebs-stat-icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.ebs-stat-body {
+  min-width: 0;
+  flex: 1;
+}
+.ebs-stat-label {
+  color: var(--ebs-muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+.ebs-stat-value {
+  color: var(--ebs-ink);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.ebs-stat-value.is-text {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.ebs-stat-hint {
+  color: var(--ebs-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.ebs-stat-lines {
+  margin-top: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 16px;
+  font-size: 13px;
+  color: var(--ebs-text);
+}
+.ebs-stat-lines b {
+  color: var(--ebs-ink);
+  font-weight: 600;
+}
+.tone-brand .ebs-stat-icon { background: var(--ebs-brand-soft); color: var(--ebs-brand); }
+.tone-green .ebs-stat-icon { background: var(--ebs-green-soft); color: var(--ebs-green); }
+.tone-amber .ebs-stat-icon { background: var(--ebs-amber-soft); color: var(--ebs-amber); }
+.tone-blue .ebs-stat-icon { background: var(--ebs-blue-soft); color: var(--ebs-blue); }
+.tone-violet .ebs-stat-icon { background: var(--ebs-violet-soft); color: var(--ebs-violet); }
+
+/* generic panel */
+.ebs-panel {
+  background: var(--ebs-surface);
+  border: 1px solid var(--ebs-border);
+  border-radius: var(--ebs-radius);
+  box-shadow: var(--ebs-shadow);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.ebs-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.ebs-panel-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ebs-ink);
+}
+
+/* check-in action bar (employee dashboard) */
+.ebs-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.ebs-app .ebs-actions .child {
+  margin: 0;
+}
+.ebs-app .ebs-actions .ant-btn {
+  height: 42px;
+  padding: 0 26px;
+  border-radius: var(--ebs-radius-sm);
+  font-weight: 600;
+}
+
+.ebs-greeting {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ebs-ink);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ------------------------------------------- legacy classes, restyled */
+.ebs-app .cardparent {
+  margin: 0 0 20px !important;
+  row-gap: 16px;
+}
+.ebs-app .dashboardcards,
+.ebs-app .dashboardcarddiff,
+.ebs-app .ant-card {
+  border: 1px solid var(--ebs-border);
+  border-radius: var(--ebs-radius);
+  box-shadow: var(--ebs-shadow);
+  background: var(--ebs-surface);
+  color: var(--ebs-text);
+}
+.ebs-app .ant-card-head {
+  border-bottom: 1px solid var(--ebs-border);
+  min-height: 48px;
+  color: var(--ebs-ink);
+  font-weight: 600;
+}
+.ebs-app .ant-card-head-title {
+  padding: 12px 0;
+}
+.ebs-app .cardtext {
+  color: var(--ebs-text);
+}
+
+.ebs-app .maincontain {
+  box-shadow: var(--ebs-shadow);
+  border: 1px solid var(--ebs-border);
+  border-radius: var(--ebs-radius);
+  background: var(--ebs-surface);
+  padding: 16px 20px;
+  align-items: center;
+}
+
+.ebs-app .ant-table-wrapper,
+.ebs-app .tabledash {
+  background: var(--ebs-surface);
+  border: 1px solid var(--ebs-border);
+  border-radius: var(--ebs-radius);
+  box-shadow: var(--ebs-shadow);
+  overflow: hidden;
+}
+.ebs-app .ant-table {
+  background: transparent;
+  color: var(--ebs-text);
+}
+.ebs-app .ant-table-thead > tr > th {
+  background: var(--ebs-surface-2);
+  color: var(--ebs-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--ebs-border);
+}
+.ebs-app .ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--ebs-border);
+}
+.ebs-app .ant-table-tbody > tr:hover > td {
+  background: var(--ebs-surface-2);
+}
+.ebs-app .ant-pagination {
+  padding: 0 16px;
+}
+.ebs-app .handletablehead .tablerowtext,
+.ebs-app .tablerowtext {
+  color: inherit;
+}
+
+/* buttons */
+.ebs-app .ant-btn {
+  border-radius: var(--ebs-radius-sm);
+  font-weight: 500;
+  box-shadow: none;
+}
+.ebs-app .ant-btn-primary,
+.ebs-login .ant-btn-primary {
+  background: var(--ebs-brand);
+  border-color: var(--ebs-brand);
+  color: #fff;
+}
+.ebs-app .ant-btn-primary:hover,
+.ebs-app .ant-btn-primary:focus,
+.ebs-login .ant-btn-primary:hover,
+.ebs-login .ant-btn-primary:focus {
+  background: var(--ebs-brand-dark);
+  border-color: var(--ebs-brand-dark);
+}
+.ebs-app .calendarbtn,
+.ebs-app .calendarbtn2 {
+  margin: 0 8px 14px 0;
+  border-color: var(--ebs-border);
+  background: var(--ebs-surface);
+  color: var(--ebs-text);
+  height: 38px;
+}
+.ebs-app .calendarbtn:hover,
+.ebs-app .calendarbtn2:hover {
+  background: var(--ebs-brand-soft);
+  border-color: var(--ebs-brand);
+  color: var(--ebs-brand);
+  transform: none;
+}
+.ebs-app .leavebtn,
+.ebs-app .addEmpBtn {
+  background: var(--ebs-brand);
+  border-color: var(--ebs-brand);
+  color: #fff;
+  border-radius: var(--ebs-radius-sm);
+  transform: none;
+}
+.ebs-app .leavebtn:hover {
+  background: var(--ebs-brand-dark);
+  transform: none;
+}
+.ebs-app .checkinBtn {
+  background: var(--ebs-green);
+  border-color: var(--ebs-green);
+  color: #fff;
+}
+.ebs-app .checkinBtn:hover {
+  background: #0e8556;
+  border-color: #0e8556;
+  transform: none;
+  color: #fff;
+}
+.ebs-app .checkoutBtn {
+  background: var(--ebs-ink);
+  border-color: var(--ebs-ink);
+  color: var(--ebs-surface);
+}
+.ebs-app .checkoutBtn:hover {
+  transform: none;
+  opacity: 0.9;
+}
+.ebs-app .ant-btn[disabled],
+.ebs-app .ant-btn[disabled]:hover {
+  background: var(--ebs-surface-2) !important;
+  border-color: var(--ebs-border) !important;
+  color: var(--ebs-muted) !important;
+  opacity: 0.8;
+}
+
+.ebs-app .ant-input,
+.ebs-app .ant-select-selector,
+.ebs-app .ant-picker {
+  border-radius: var(--ebs-radius-sm) !important;
+}
+.ebs-app .ant-modal-content,
+.ebs-app .ant-dropdown-menu {
+  border-radius: var(--ebs-radius);
+}
+.ebs-app .ant-badge-status-text,
+.ebs-app .ant-typography {
+  color: inherit;
+}
+.ebs-app h1,
+.ebs-app h2,
+.ebs-app h3 {
+  color: var(--ebs-ink);
+}
+
+/* error / empty states */
+.ebs-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 56px 20px;
+  color: var(--ebs-muted);
+}
+.ebs-state h2 {
+  margin: 0;
+  font-size: 20px;
+}
+.ebs-state .icon {
+  font-size: 42px;
+  color: var(--ebs-brand);
+}
+
+/* --------------------------------------------------------------- login */
+.ebs-login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  background: var(--ebs-surface);
+}
+.ebs-login-aside {
+  position: relative;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background:
+    radial-gradient(900px 500px at 10% 0%, rgba(200, 36, 43, 0.55), transparent 60%),
+    linear-gradient(160deg, #141b26 0%, #1b2536 100%);
+  overflow: hidden;
+}
+.ebs-login-aside h2 {
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 460px;
+  margin: 0 0 14px;
+}
+.ebs-login-aside p {
+  color: #b7c1d1;
+  font-size: 16px;
+  max-width: 440px;
+  margin: 0;
+}
+.ebs-login-points {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+  color: #dfe5ee;
+  font-size: 15px;
+}
+.ebs-login-points div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.ebs-login-points .anticon {
+  color: #ff8e93;
+}
+.ebs-login-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.ebs-login-brand .ebs-brand-mark {
+  width: 38px;
+  height: 38px;
+}
+.ebs-login-foot {
+  color: #7f8ba0;
+  font-size: 12px;
+}
+.ebs-login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  background: var(--ebs-canvas);
+}
+.ebs-login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--ebs-surface);
+  border: 1px solid var(--ebs-border);
+  border-radius: 16px;
+  padding: 36px 32px 28px;
+  box-shadow: var(--ebs-shadow-lg);
+}
+.ebs-login-card h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ebs-ink);
+  letter-spacing: -0.02em;
+}
+.ebs-login-card .sub {
+  color: var(--ebs-muted);
+  margin-bottom: 24px;
+}
+.ebs-login-card .ant-input-affix-wrapper {
+  height: 44px;
+  border-radius: var(--ebs-radius-sm);
+}
+.ebs-login-card .ant-btn {
+  height: 44px;
+  font-weight: 600;
+  width: 100%;
+}
+.ebs-login-card .ebs-login-error {
+  margin-bottom: 16px;
+}
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width: 991px) {
+  .ebs-app .ebs-sider.ant-layout-sider {
+    position: fixed;
+    left: 0;
+    top: var(--ebs-header-h);
+    height: calc(100vh - var(--ebs-header-h));
+    box-shadow: var(--ebs-shadow-lg);
+  }
+  .ebs-content {
+    padding: 18px 16px 8px;
+  }
+  .ebs-user-meta {
+    display: none;
+  }
+  .ebs-header {
+    padding: 0 14px;
+  }
+}
+@media (max-width: 860px) {
+  .ebs-login {
+    grid-template-columns: 1fr;
+  }
+  .ebs-login-aside {
+    display: none;
+  }
+  .ebs-datetime {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .ebs-page-title {
+    font-size: 20px;
+  }
+  .ebs-stat-lines {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* keyboard focus */
+.ebs-app :focus-visible,
+.ebs-login :focus-visible {
+  outline: 2px solid var(--ebs-brand);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* break / resume button */
+.ebs-app .ebs-break {
+  background: var(--ebs-amber);
+  border-color: var(--ebs-amber);
+  color: #fff;
+}
+.ebs-app .ebs-break:hover,
+.ebs-app .ebs-break:focus {
+  background: #b87504;
+  border-color: #b87504;
+  color: #fff;
+}
+
+/* brand colour for antd controls that the less theme may not reach */
+.ebs-app a { color: var(--ebs-brand); }
+.ebs-app .ant-pagination-item-active { border-color: var(--ebs-brand); }
+.ebs-app .ant-pagination-item-active a { color: var(--ebs-brand); }
+.ebs-app .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn { color: var(--ebs-brand); }
+.ebs-app .ant-tabs-ink-bar { background: var(--ebs-brand); }
+.ebs-app .ant-radio-checked .ant-radio-inner,
+.ebs-app .ant-checkbox-checked .ant-checkbox-inner { background-color: var(--ebs-brand); border-color: var(--ebs-brand); }
+.ebs-app .ant-picker-calendar .ant-picker-cell-selected .ant-picker-calendar-date { background: var(--ebs-brand-soft); }
+
+/* ---- legacy fixed-pixel layouts made fluid ---- */
+.ebs-app .controlcalendargrid { width: 100%; max-width: 240px; margin-left: 0; }
+.ebs-app .profilecard { width: 100%; margin-left: 0; box-shadow: var(--ebs-shadow); }
+.ebs-app .smallprofilecard { width: 100%; max-width: 320px; height: auto; box-shadow: var(--ebs-shadow); }
+.ebs-app .editprofilebtn { margin-left: 0; }
+.ebs-app .addEmpFormBtn,
+.ebs-app .addEmpFormBtn:hover { margin-left: 0; transform: none; }
+.ebs-app .exportbtn { margin-bottom: 14px; }
+.ebs-app .ant-modal { max-width: 96vw; }
+.ebs-app .ant-modal-body { overflow-x: auto; }
+.ebs-app .ant-table-content { overflow-x: auto; }
+.ebs-app .ant-picker-calendar { background: var(--ebs-surface); border-radius: var(--ebs-radius); }
+.ebs-app .ant-picker-panel { background: transparent; }
+.ebs-app .ant-picker-calendar-full .ant-picker-calendar-date-content { overflow: hidden; }

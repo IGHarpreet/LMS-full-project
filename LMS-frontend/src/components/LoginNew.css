@@ -1,0 +1,274 @@
+.hrms-login-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px;
+    position: relative;
+    overflow: hidden;
+    background: #f3f6fb;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.hrms-login-background-shape {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.shape-one {
+    width: 480px;
+    height: 480px;
+    background: rgba(43, 103, 178, 0.07);
+    top: -230px;
+    right: -130px;
+}
+
+.shape-two {
+    width: 420px;
+    height: 420px;
+    background: rgba(43, 103, 178, 0.055);
+    bottom: -230px;
+    left: -150px;
+}
+
+.hrms-login-wrapper {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    z-index: 1;
+}
+
+/* BRAND */
+
+.hrms-login-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.hrms-brand-logo {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #C8242B;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 22px;
+    box-shadow: 0 5px 14px rgba(36, 93, 159, 0.2);
+}
+
+.hrms-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.hrms-brand-text strong {
+    color: #1d2939;
+    font-size: 19px;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+.hrms-brand-text span {
+    color: #8993a3;
+    font-size: 11px;
+}
+
+/* LOGIN CARD */
+
+.hrms-login-card {
+    width: 100%;
+    padding: 36px 36px 27px;
+    background: #fff;
+    border: 1px solid #e9edf3;
+    border-radius: 16px;
+    box-shadow:
+        0 12px 35px rgba(31, 50, 81, 0.07),
+        0 2px 6px rgba(31, 50, 81, 0.025);
+}
+
+.hrms-login-card-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #edf4ff;
+    color: #C8242B;
+    border-radius: 13px;
+    font-size: 21px;
+    margin: 0 auto 19px;
+}
+
+.hrms-login-heading {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+.hrms-login-heading h1 {
+    text-align: center;
+    margin: 0 0 7px;
+    color: #1d2939;
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -0.8px;
+}
+
+.hrms-login-heading p {
+    margin: 0;
+    color: #8792a3;
+    font-size: 12px;
+}
+
+/* ROLE LABEL */
+
+.hrms-login-role-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #e9eef5;
+    border-radius: 7px;
+    background: #f8faff;
+    color: #62748b;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hrms-role-indicator {
+    width: 7px;
+    height: 7px;
+    background: #299b70;
+    border-radius: 50%;
+}
+
+/* FORM */
+
+.hrms-login-form .ant-form-item {
+    margin-bottom: 20px;
+}
+
+.hrms-login-form .ant-form-item-label {
+    padding-bottom: 7px;
+}
+
+.hrms-login-form .ant-form-item-label>label {
+    color: #344054;
+    font-size: 12px;
+    font-weight: 650;
+}
+
+.hrms-login-form .ant-input-affix-wrapper {
+    min-height: 46px;
+    border-radius: 8px;
+    border-color: #dfe4ec;
+    padding: 0 13px;
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+.hrms-login-form .ant-input-affix-wrapper:hover {
+    border-color: #7aa4d5;
+}
+
+.hrms-login-form .ant-input-affix-wrapper-focused {
+    border-color: #397ac6 !important;
+    box-shadow: 0 0 0 3px rgba(57, 122, 198, 0.10) !important;
+}
+
+.hrms-login-form .ant-input {
+    color: #344054;
+    font-size: 13px;
+}
+
+.hrms-login-form .ant-input::placeholder {
+    color: #a5adba;
+}
+
+.hrms-login-form .ant-input-prefix {
+    color: #8995a7;
+    margin-right: 10px;
+}
+
+/* BUTTON */
+
+.hrms-login-submit {
+    height: 46px;
+    margin-top: 3px;
+    border-radius: 8px;
+    background: #C8242B;
+    border-color: #C8242B;
+    font-size: 13px;
+    font-weight: 650;
+    box-shadow: 0 4px 10px rgba(36, 93, 159, 0.15);
+    transition: all 0.2s ease;
+}
+
+.hrms-login-submit:hover,
+.hrms-login-submit:focus {
+    background: #c3565b !important;
+    border-color: #c3565b !important;
+    box-shadow: 0 5px 14px rgba(36, 93, 159, 0.22);
+}
+
+.hrms-login-error {
+    margin-bottom: 18px;
+    border-radius: 8px;
+}
+
+/* SECURITY FOOTER */
+
+.hrms-login-security {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 24px;
+    color: #929cab;
+    font-size: 10px;
+}
+
+.hrms-login-security .anticon {
+    color: #399879;
+    font-size: 13px;
+}
+
+/* PAGE FOOTER */
+
+.hrms-login-footer {
+    margin-top: 25px;
+    text-align: center;
+    color: #9aa3b1;
+    font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+    .hrms-login-page {
+        padding: 22px 15px;
+    }
+
+    .hrms-login-card {
+        padding: 29px 22px 23px;
+        border-radius: 13px;
+    }
+
+    .hrms-login-heading h1 {
+        font-size: 24px;
+    }
+
+    .hrms-login-brand {
+        margin-bottom: 22px;
+    }
+}

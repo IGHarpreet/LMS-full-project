@@ -1,0 +1,467 @@
+.attendance-calendar-wrapper {
+  width: 100%;
+  padding: 20px;
+  background: #f5f7fb;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.attendance-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.attendance-calendar-header h3 {
+  margin-bottom: 5px !important;
+  color: #172033;
+}
+
+.attendance-summary {
+  margin-bottom: 20px;
+}
+
+.attendance-stat-card {
+  height: 100%;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+}
+
+.attendance-stat-card .ant-statistic-title {
+  color: #697586;
+  font-size: 13px;
+}
+
+.attendance-stat-card .ant-statistic-content {
+  color: #172033;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.attendance-stat-card .ant-statistic-content-prefix {
+  margin-right: 8px;
+  color: #64748b;
+  font-size: 19px;
+}
+
+.attendance-calendar-card,
+.attendance-details-card {
+  margin-bottom: 20px;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+}
+
+.attendance-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 18px;
+}
+
+.attendance-calendar-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.present-dot {
+  background: #16a34a;
+}
+
+.today-dot {
+  background: #2563eb;
+}
+
+.absent-dot {
+  background: #cbd5e1;
+}
+
+/* Calendar base */
+.attendance-calendar-card .ant-picker-calendar {
+  background: transparent;
+}
+
+.attendance-calendar-card .ant-picker-calendar-header {
+  padding: 10px 0 18px;
+}
+
+.attendance-calendar-card .ant-picker-content th {
+  color: #64748b;
+  font-weight: 600;
+  padding-bottom: 12px;
+}
+
+.attendance-calendar-card .ant-picker-cell {
+  padding: 3px;
+}
+
+.attendance-calendar-card .ant-picker-cell::before {
+  display: none !important;
+}
+
+/* Full date box */
+.attendance-calendar-card .attendance-date {
+  min-height: 85px;
+  margin: 0;
+  padding: 9px;
+  border: 1px solid #edf0f5;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.attendance-calendar-card .attendance-date:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.attendance-calendar-card .ant-picker-calendar-date-value {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Present date */
+.attendance-calendar-card .attendance-present {
+  background: #ecfdf3 !important;
+  border: 1px solid #86efac !important;
+}
+
+.attendance-calendar-card .attendance-present
+  .ant-picker-calendar-date-value {
+  color: #166534;
+  font-weight: 700;
+}
+
+/* Present label */
+.attendance-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Today's date */
+.attendance-calendar-card .attendance-today {
+  border: 2px solid #2563eb !important;
+}
+
+.attendance-calendar-card .attendance-today
+  .ant-picker-calendar-date-value {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* Selected date */
+.attendance-calendar-card .attendance-selected {
+  box-shadow: inset 0 0 0 1px #64748b;
+}
+
+/* Dates outside current month */
+.attendance-calendar-card .attendance-other-month {
+  opacity: 0.35;
+}
+
+.attendance-note {
+  padding-top: 15px;
+  border-top: 1px solid #edf0f5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.attendance-details-card h4 {
+  margin-bottom: 4px !important;
+}
+
+.attendance-details-header {
+  margin-bottom: 18px;
+}
+
+.attendance-detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.attendance-record-item {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #edf0f5;
+  border-radius: 8px;
+  background: #fafbfc;
+}
+
+.attendance-record-info {
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .attendance-calendar-wrapper {
+    padding: 12px;
+  }
+
+  .attendance-calendar-header {
+    align-items: flex-start;
+  }
+
+  .attendance-calendar-header h3 {
+    font-size: 21px;
+  }
+
+  .attendance-calendar-card .attendance-date {
+    min-height: 65px;
+    padding: 5px;
+  }
+
+  .attendance-status {
+    gap: 2px;
+    padding: 3px;
+    font-size: 9px;
+  }
+
+  .attendance-calendar-legend {
+    gap: 12px;
+  }
+
+  .attendance-calendar-card .ant-picker-calendar-header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-calendar-wrapper {
+    padding: 8px;
+  }
+
+  .attendance-calendar-card .ant-picker-cell {
+    padding: 1px;
+  }
+
+  .attendance-calendar-card .attendance-date {
+    min-height: 55px;
+    padding: 3px;
+  }
+
+  .attendance-calendar-card .ant-picker-calendar-date-value {
+    font-size: 12px;
+  }
+
+  .attendance-status {
+    font-size: 8px;
+  }
+
+  .attendance-stat-card .ant-statistic-content {
+    font-size: 21px;
+  }
+}
+
+/* ==========================================
+   ATTENDANCE CALENDAR - DARK MODE
+   ========================================== */
+
+html[data-theme="dark"] .attendance-calendar-wrapper {
+  background: #111827;
+  color: #e5e7eb;
+}
+
+/* Header */
+html[data-theme="dark"] .attendance-calendar-header h3,
+html[data-theme="dark"] .attendance-calendar-header h4 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-header p,
+html[data-theme="dark"] .attendance-note {
+  color: #9ca3af;
+}
+
+/* Summary cards */
+html[data-theme="dark"] .attendance-stat-card,
+html[data-theme="dark"] .attendance-calendar-card,
+html[data-theme="dark"] .attendance-details-card {
+  background: #1f2937 !important;
+  border: 1px solid #374151 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .attendance-stat-card .ant-card-body,
+html[data-theme="dark"] .attendance-calendar-card .ant-card-body,
+html[data-theme="dark"] .attendance-details-card .ant-card-body {
+  background: transparent;
+}
+
+html[data-theme="dark"] .attendance-stat-card .ant-statistic-title {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .attendance-stat-card .ant-statistic-content {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .attendance-stat-card .ant-statistic-content-prefix {
+  color: #94a3b8 !important;
+}
+
+/* Calendar container */
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-calendar {
+  background: transparent !important;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-calendar-header {
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-content th {
+  color: #9ca3af !important;
+}
+
+/* Calendar navigation */
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-calendar-header .ant-select-selector,
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-calendar-header .ant-picker-calendar-mode-switch {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-select-selection-item,
+html[data-theme="dark"] .attendance-calendar-card .ant-select-arrow,
+html[data-theme="dark"] .attendance-calendar-card .ant-radio-button-wrapper {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-radio-button-wrapper {
+  background: #273449 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-radio-button-wrapper-checked {
+  background: #2563eb !important;
+  border-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+/* Calendar dates */
+html[data-theme="dark"] .attendance-calendar-card .attendance-date {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .attendance-date:hover {
+  background: #334155 !important;
+  border-color: #64748b !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-calendar-date-value {
+  color: #e5e7eb !important;
+}
+
+/* Present date */
+html[data-theme="dark"] .attendance-calendar-card .attendance-present {
+  background: #123c2b !important;
+  border-color: #15803d !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .attendance-present
+.ant-picker-calendar-date-value {
+  color: #86efac !important;
+}
+
+/* Present status label */
+html[data-theme="dark"] .attendance-status {
+  background: #14532d !important;
+  color: #bbf7d0 !important;
+}
+
+/* Today's date */
+html[data-theme="dark"] .attendance-calendar-card .attendance-today {
+  border: 2px solid #60a5fa !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .attendance-today
+.ant-picker-calendar-date-value {
+  color: #93c5fd !important;
+}
+
+/* Selected date */
+html[data-theme="dark"] .attendance-calendar-card .attendance-selected {
+  box-shadow: inset 0 0 0 1px #94a3b8;
+}
+
+/* Outside month */
+html[data-theme="dark"] .attendance-calendar-card .attendance-other-month {
+  opacity: 0.3;
+}
+
+/* Legend */
+html[data-theme="dark"] .attendance-calendar-legend {
+  color: #d1d5db;
+}
+
+/* Details */
+html[data-theme="dark"] .attendance-details-card h4,
+html[data-theme="dark"] .attendance-details-card h3 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .attendance-record-item {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .attendance-record-info {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .attendance-note {
+  border-color: #374151 !important;
+}
+
+/* General text inside attendance cards */
+html[data-theme="dark"] .attendance-calendar-card,
+html[data-theme="dark"] .attendance-details-card {
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-typography,
+html[data-theme="dark"] .attendance-details-card .ant-typography {
+  color: #e5e7eb;
+}
+
+/* Calendar arrows */
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-header button {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .attendance-calendar-card .ant-picker-header button:hover {
+  color: #60a5fa !important;
+}
+
+/* Responsive dark mode */
+@media (max-width: 768px) {
+  html[data-theme="dark"] .attendance-calendar-wrapper {
+    background: #111827;
+  }
+}

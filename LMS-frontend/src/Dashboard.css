@@ -1,0 +1,513 @@
+.dashboard-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-top-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.dashboard-live-stats {
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+.dashboard-live-stat-card {
+  height: 100%;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-live-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(20, 35, 60, 0.08);
+}
+
+.dashboard-live-stat-card .ant-statistic-title {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.dashboard-live-stat-card .ant-statistic-content {
+  color: #172033;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.dashboard-live-stat-card .ant-statistic-content-prefix {
+  margin-right: 8px;
+  font-size: 19px;
+}
+
+.dashboard-live-stat-card .ant-card-body {
+  padding: 20px;
+}
+
+.dashboard-live-stat-card .ant-typography {
+  display: block;
+  margin-top: 7px;
+  font-size: 12px;
+}
+
+.dashboard-attendance-panel {
+  margin-bottom: 24px;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+}
+
+.dashboard-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-panel-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 7px;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.dashboard-panel-title > .anticon {
+  color: #64748b;
+}
+
+.dashboard-table-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.dashboard-search-input {
+  width: 280px;
+  max-width: 100%;
+  border-radius: 7px;
+}
+
+.dashboard-status-filter {
+  width: 180px;
+  max-width: 100%;
+}
+
+.dashboard-attendance-table .ant-table {
+  border-radius: 8px;
+}
+
+.dashboard-attendance-table .ant-table-thead > tr > th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dashboard-attendance-table .ant-table-tbody > tr > td {
+  color: #334155;
+  vertical-align: middle;
+}
+
+.dashboard-attendance-table .ant-table-tbody > tr:hover > td {
+  background: #f8fafc;
+}
+
+/* Holiday dropdown */
+.dashboard-holiday-calendar {
+  width: 340px;
+  max-width: calc(100vw - 40px);
+  padding: 5px;
+  white-space: normal;
+}
+
+.dashboard-holiday-calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar {
+  background: transparent;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-header {
+  padding: 5px 0 12px;
+}
+
+.dashboard-holiday-calendar .ant-picker-content th {
+  font-size: 11px;
+}
+
+.dashboard-holiday-calendar .ant-picker-cell {
+  padding: 2px;
+}
+
+.dashboard-holiday-cell-list,
+.dashboard-holiday-popover-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dashboard-holiday-event {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.dashboard-holiday-event .caletext {
+  overflow: hidden;
+  color: #b42318;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dashboard-more-events {
+  color: #64748b;
+  font-size: 10px;
+  list-style: none;
+}
+
+.holiday-calendar-note {
+  display: block;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+/* =========================================
+   HOLIDAYS & EVENTS CALENDAR
+========================================= */
+
+/* Calendar dropdown */
+.dashboard-holiday-dropdown .ant-dropdown-menu {
+  width: 440px;
+  max-width: 90vw;
+  
+}
+
+.dashboard-holiday-dropdown .ant-dropdown-menu-item {
+  white-space: normal;
+  padding: 12px;
+}
+
+.dashboard-holiday-calendar {
+  width: 100%;
+  min-width: 0;
+}
+
+.dashboard-holiday-calendar-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 15px;
+}
+
+/* Calendar layout */
+.dashboard-holiday-calendar .ant-picker-calendar {
+  background: #fff;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-header {
+  padding: 0 0 12px;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-mode-switch {
+  display: none;
+}
+
+.dashboard-holiday-calendar .ant-picker-panel {
+  border-top: none;
+}
+
+.dashboard-holiday-calendar .ant-picker-content th {
+  padding-bottom: 10px;
+  color: #8a94a6;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.dashboard-holiday-calendar .ant-picker-cell {
+  padding: 3px 2px;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-date {
+  min-height: 76px !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  transition: all 0.2s ease;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-date:hover {
+  background: #f5f7fb !important;
+  border-color: #e5eaf2 !important;
+}
+
+.dashboard-holiday-calendar .ant-picker-calendar-date-today {
+  border-color: #6478e8 !important;
+}
+
+.dashboard-holiday-calendar
+  .ant-picker-calendar-date-value {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dashboard-holiday-calendar
+  .ant-picker-calendar-date-content {
+  height: 27px;
+  overflow: hidden;
+}
+
+/* Compact event indicators */
+.dashboard-calendar-event-indicators {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  width: 100%;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.dashboard-calendar-dots {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 7px;
+}
+
+.dashboard-event-dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.company-event-dot {
+  background: #6478e8;
+}
+
+.google-event-dot {
+  background: #e59a35;
+}
+
+.dashboard-calendar-event-count {
+  max-width: 100%;
+  overflow: hidden;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Event details popover */
+.dashboard-holiday-event-popover .ant-popover-inner {
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+}
+
+.dashboard-holiday-event-popover .ant-popover-inner-content {
+  padding: 12px;
+}
+
+.dashboard-holiday-popover {
+  width: 230px;
+  max-width: 75vw;
+}
+
+.dashboard-holiday-popover-heading {
+  margin-bottom: 10px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #edf0f4;
+  color: #1e293b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dashboard-holiday-popover-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 9px 4px;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+.dashboard-holiday-popover-item:last-child {
+  border-bottom: none;
+}
+
+.dashboard-holiday-popover-item .dashboard-event-dot {
+  margin-top: 5px;
+  width: 8px;
+  height: 8px;
+}
+
+.dashboard-holiday-event-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  gap: 3px;
+}
+
+.dashboard-holiday-event-name {
+  color: #263244;
+  font-size: 12px;
+  line-height: 17px;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-holiday-event-source {
+  font-size: 10px;
+}
+
+/* Calendar footer */
+.holiday-calendar-note {
+  display: block;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #edf0f4;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .dashboard-holiday-calendar {
+    width: 340px;
+    max-width: 88vw;
+    padding: 12px;
+  }
+
+  .dashboard-holiday-calendar .ant-picker-calendar-date {
+    min-height: 65px !important;
+    padding: 3px !important;
+  }
+
+  .dashboard-calendar-event-count {
+    font-size: 8px;
+  }
+}/* Selected date events panel */
+.dashboard-selected-holiday-events {
+  margin-top: 16px;
+  padding: 14px;
+  width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  max-height: 130px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dashboard-selected-holiday-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.dashboard-selected-event-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dashboard-holiday-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.dashboard-holiday-event-name {
+  overflow-wrap: anywhere;
+}
+
+.dashboard-holiday-event-source {
+  font-size: 11px;
+}
+
+.dashboard-selected-holiday-events .ant-empty {
+  margin: 12px 0;
+}
+
+.dashboard-selected-holiday-events .ant-empty-description {
+  font-size: 12px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-panel-header {
+    align-items: flex-start;
+  }
+
+  .dashboard-table-filters {
+    align-items: stretch;
+  }
+
+  .dashboard-search-input,
+  .dashboard-status-filter {
+    width: 100%;
+  }
+
+  .dashboard-live-stat-card .ant-card-body {
+    padding: 14px;
+  }
+
+  .dashboard-live-stat-card .ant-statistic-content {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-panel-header {
+    flex-direction: column;
+  }
+
+  .dashboard-top-actions {
+    justify-content: flex-start;
+  }
+
+  .dashboard-live-stat-card .ant-statistic-title {
+    font-size: 12px;
+  }
+
+  .dashboard-live-stat-card .ant-statistic-content {
+    font-size: 20px;
+  }
+}

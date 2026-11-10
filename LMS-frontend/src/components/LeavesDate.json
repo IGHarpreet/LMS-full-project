@@ -1,0 +1,164 @@
+{
+    "leaveData": [
+        {
+            "_id": "637b058959234569d23f6b0b",
+            "emp_id": [
+                "636c8e5de5e1d2f1f436a686"
+            ],
+            "EmployeeName": "Hari Lal",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-01",
+            "ReturnDate": "2022-11-30",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b05b459234569d23f6b0e",
+            "emp_id": [
+                "6361fddede853809f8f151cb"
+            ],
+            "EmployeeName": "Prince",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-01",
+            "ReturnDate": "2022-11-07",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b05d259234569d23f6b10",
+            "emp_id": [
+                "636c8810c6ecd8742153ba92"
+            ],
+            "EmployeeName": "Hari",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-01",
+            "ReturnDate": "2022-11-07",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b062659234569d23f6b12",
+            "emp_id": [
+                "636c8e5de5e1d2f1f436a686"
+            ],
+            "EmployeeName": "Hari Lal",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-21",
+            "ReturnDate": "2022-11-21",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b068359234569d23f6b14",
+            "emp_id": [
+                "636cb5908d4d903e9bb0a02f"
+            ],
+            "EmployeeName": "Mohan",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-01",
+            "ReturnDate": "2022-11-01",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b15043586e2dce2d4983c",
+            "emp_id": [
+                "636cb5908d4d903e9bb0a02f"
+            ],
+            "EmployeeName": "Mohan",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software",
+            "LeaveType": "ShortLeave",
+            "LeaveDate": "2022-11-21",
+            "ReturnDate": "2022-11-21",
+            "TotalHoursRequested": "Half Day",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b1a51753e068e1914da74",
+            "emp_id": [
+                "636c8810c6ecd8742153ba92"
+            ],
+            "EmployeeName": "Hari",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software Engineering",
+            "LeaveType": "Sick",
+            "LeaveDate": "2022-11-12",
+            "ReturnDate": "2022-11-17",
+            "TotalHoursRequested": "0",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b2efc5c1096d71c63cf70",
+            "emp_id": [
+                "6361fddede853809f8f151cb"
+            ],
+            "EmployeeName": "Prince",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software",
+            "LeaveType": "ShortLeave",
+            "LeaveDate": "2022-11-21",
+            "ReturnDate": "2022-11-21",
+            "TotalHoursRequested": "Half Day",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b411a5c1096d71c63cfae",
+            "emp_id": [
+                "636ca99a3fcf584e9dbc21ba"
+            ],
+            "EmployeeName": "Sohan Singh",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software",
+            "LeaveType": "ShortLeave",
+            "LeaveDate": "2022-11-21",
+            "ReturnDate": "2022-11-21",
+            "TotalHoursRequested": "Half Day",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        },
+        {
+            "_id": "637b5263e87321bbed0c0e7b",
+            "emp_id": [
+                "6361fdc6de853809f8f151c7"
+            ],
+            "EmployeeName": "Baljeet",
+            "SupervisorName": "Sudhir Dadwal",
+            "Department": "Software",
+            "LeaveType": "ShortLeave",
+            "LeaveDate": "2022-11-21",
+            "ReturnDate": "2022-11-21",
+            "TotalHoursRequested": "Half Day",
+            "TotalDaysRequested": 0,
+            "ApprovalStatus": "Pending",
+            "__v": 0
+        }
+    ]
+}

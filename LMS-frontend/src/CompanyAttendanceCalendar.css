@@ -1,0 +1,629 @@
+
+.company-attendance-calendar-page {
+  width: 100%;
+  padding: 8px 0 24px;
+  color: #1e293b;
+}
+
+.company-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.company-calendar-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.company-calendar-heading h3 {
+  margin: 0 0 4px !important;
+}
+
+.company-calendar-heading-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 22px;
+}
+
+.company-calendar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.company-calendar-header-actions .ant-btn {
+  height: 38px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.company-calendar-stats {
+  margin-bottom: 18px;
+}
+
+.company-calendar-stat-card {
+  height: 100%;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.025);
+}
+
+.company-calendar-stat-card .ant-card-body {
+  padding: 16px;
+}
+
+.company-calendar-stat-card .ant-statistic-title {
+  color: #64748b;
+  font-size: 12px;
+  margin-bottom: 9px;
+}
+
+.company-calendar-stat-card .ant-statistic-content {
+  font-size: 24px;
+  font-weight: 650;
+}
+
+.company-calendar-main-row {
+  align-items: stretch;
+}
+
+.company-calendar-main-card,
+.company-calendar-people-card {
+  height: 100%;
+  border: 1px solid #e8edf3;
+  border-radius: 13px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.025);
+}
+
+.company-calendar-main-card .ant-card-body,
+.company-calendar-people-card .ant-card-body {
+  padding: 20px;
+}
+
+.company-calendar-card-heading,
+.company-calendar-people-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.company-calendar-card-heading h4,
+.company-calendar-people-heading h4 {
+  margin: 0 0 4px !important;
+}
+
+.company-calendar-month-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.company-calendar-main-card .ant-picker-calendar {
+  background: transparent;
+}
+
+.company-calendar-main-card .ant-picker-calendar-header {
+  padding: 8px 0 14px;
+}
+
+.company-calendar-main-card .ant-picker-calendar-date {
+  min-height: 88px;
+  margin: 0 3px;
+  padding: 5px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.company-calendar-main-card .ant-picker-calendar-date:hover {
+  background: #f1f5f9;
+}
+
+.company-calendar-main-card
+  .ant-picker-calendar-date-today
+  .ant-picker-calendar-date-value {
+  color: #4f46e5;
+  font-weight: 700;
+}
+
+.company-calendar-main-card
+  .ant-picker-calendar-date-selected {
+  background: #eef2ff !important;
+}
+
+.company-calendar-main-card
+  .ant-picker-calendar-date-selected
+  .ant-picker-calendar-date-value {
+  color: #4338ca;
+  font-weight: 700;
+}
+
+.company-calendar-cell-content {
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.company-calendar-cell-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.company-calendar-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.company-calendar-cell-subtext {
+  margin: 3px 0 0 11px;
+  color: #64748b;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.company-calendar-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 15px;
+  border-top: 1px solid #edf0f4;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.company-calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.legend-present {
+  background: #22c55e;
+}
+
+.legend-empty {
+  background: #cbd5e1;
+}
+
+.company-calendar-people-heading {
+  padding-bottom: 15px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.company-calendar-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.company-calendar-filters .ant-input-affix-wrapper,
+.company-calendar-filters .ant-select-selector {
+  min-height: 38px !important;
+  border-radius: 8px !important;
+}
+
+.company-calendar-employee-list {
+  max-height: 570px;
+  min-height: 180px;
+  overflow-y: auto;
+  padding-right: 3px;
+}
+
+.company-calendar-employee {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.company-calendar-employee:last-child {
+  border-bottom: none;
+}
+
+.company-calendar-employee-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.company-calendar-avatar {
+  flex: 0 0 auto;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.company-calendar-employee-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.company-calendar-employee-details > span:first-child {
+  color: #1e293b;
+  font-size: 13px;
+}
+
+.company-calendar-employee-details .employee-subtext {
+  overflow: hidden;
+  max-width: 190px;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.company-calendar-times {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.company-calendar-employee-status {
+  flex: 0 0 auto;
+}
+
+.company-calendar-employee-status .ant-tag {
+  margin: 0;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.company-calendar-list-footer {
+  padding-top: 13px;
+  border-top: 1px solid #edf0f4;
+  font-size: 12px;
+}
+
+.company-calendar-loading {
+  display: flex;
+  min-height: 160px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+@media (max-width: 767px) {
+  .company-calendar-header {
+    align-items: flex-start;
+  }
+
+  .company-calendar-header-actions {
+    width: 100%;
+  }
+
+  .company-calendar-header-actions .ant-btn {
+    flex: 1;
+  }
+
+  .company-calendar-main-card .ant-card-body,
+  .company-calendar-people-card .ant-card-body {
+    padding: 13px;
+  }
+
+  .company-calendar-main-card .ant-picker-calendar-date {
+    min-height: 65px;
+    margin: 0;
+    padding: 3px;
+  }
+
+  .company-calendar-cell-count {
+    font-size: 9px;
+    gap: 3px;
+  }
+
+  .company-calendar-cell-subtext {
+    font-size: 9px;
+    margin-left: 8px;
+  }
+
+  .company-calendar-stat-card .ant-card-body {
+    padding: 12px;
+  }
+
+  .company-calendar-stat-card .ant-statistic-content {
+    font-size: 20px;
+  }
+
+  .company-calendar-employee {
+    align-items: flex-start;
+  }
+
+  .company-calendar-employee-status .ant-tag {
+    white-space: normal;
+    max-width: 115px;
+  }
+}
+
+/* ============================================
+   COMPANY ATTENDANCE CALENDAR - DARK MODE
+   ============================================ */
+
+/* Main page */
+html[data-theme="dark"] .company-attendance-calendar-page {
+  background: #111827 !important;
+  color: #e5e7eb !important;
+}
+
+/* Header */
+html[data-theme="dark"] .company-calendar-heading h3,
+html[data-theme="dark"] .company-calendar-card-heading h4,
+html[data-theme="dark"] .company-calendar-people-heading h4 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .company-calendar-heading p,
+html[data-theme="dark"] .company-calendar-card-heading p,
+html[data-theme="dark"] .company-calendar-people-heading p {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .company-calendar-heading-icon {
+  background: #312e81 !important;
+  color: #c7d2fe !important;
+}
+
+/* Header buttons */
+html[data-theme="dark"] .company-calendar-header-actions .ant-btn {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .company-calendar-header-actions .ant-btn-primary {
+  background: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  color: #ffffff !important;
+}
+
+/* Statistics cards */
+html[data-theme="dark"] .company-calendar-stat-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .company-calendar-stat-card .ant-card-body {
+  background: transparent !important;
+}
+
+html[data-theme="dark"] .company-calendar-stat-card .ant-statistic-title {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .company-calendar-stat-card .ant-statistic-content {
+  color: #f9fafb !important;
+}
+
+/* Main calendar and employee cards */
+html[data-theme="dark"] .company-calendar-main-card,
+html[data-theme="dark"] .company-calendar-people-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-card-body,
+html[data-theme="dark"] .company-calendar-people-card .ant-card-body {
+  background: transparent !important;
+}
+
+/* Calendar heading and summary */
+html[data-theme="dark"] .company-calendar-month-summary {
+  color: #9ca3af !important;
+}
+
+/* Calendar base */
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar {
+  background: transparent !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar-header {
+  background: transparent !important;
+}
+
+/* Calendar weekdays */
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-content th {
+  color: #9ca3af !important;
+}
+
+/* Calendar date cells */
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-cell {
+  color: #d1d5db !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar-date {
+  background: #273449 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar-date:hover {
+  background: #334155 !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar-date-value {
+  color: #e5e7eb !important;
+}
+
+/* Today */
+html[data-theme="dark"] .company-calendar-main-card
+.ant-picker-calendar-date-today {
+  border-color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card
+.ant-picker-calendar-date-today
+.ant-picker-calendar-date-value {
+  color: #93c5fd !important;
+  font-weight: 700;
+}
+
+/* Selected date */
+html[data-theme="dark"] .company-calendar-main-card
+.ant-picker-calendar-date-selected {
+  background: #312e81 !important;
+  border-color: #6366f1 !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card
+.ant-picker-calendar-date-selected
+.ant-picker-calendar-date-value {
+  color: #c7d2fe !important;
+}
+
+/* Calendar cell attendance details */
+html[data-theme="dark"] .company-calendar-cell-count {
+  color: #86efac !important;
+}
+
+html[data-theme="dark"] .company-calendar-cell-subtext {
+  color: #9ca3af !important;
+}
+
+/* Calendar legend */
+html[data-theme="dark"] .company-calendar-legend {
+  color: #9ca3af !important;
+  border-top-color: #374151 !important;
+}
+
+/* Employee section heading */
+html[data-theme="dark"] .company-calendar-people-heading {
+  border-bottom-color: #374151 !important;
+}
+
+/* Search and select */
+html[data-theme="dark"] .company-calendar-filters .ant-input-affix-wrapper,
+html[data-theme="dark"] .company-calendar-filters .ant-select-selector {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .company-calendar-filters input,
+html[data-theme="dark"] .company-calendar-filters .ant-select-selection-item {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .company-calendar-filters input::placeholder,
+html[data-theme="dark"] .company-calendar-filters .ant-select-selection-placeholder {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .company-calendar-filters .anticon {
+  color: #94a3b8 !important;
+}
+
+/* Employee list */
+html[data-theme="dark"] .company-calendar-employee {
+  border-bottom-color: #374151 !important;
+}
+
+html[data-theme="dark"] .company-calendar-employee-details > span:first-child {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .company-calendar-employee-details .employee-subtext {
+  color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .company-calendar-times {
+  color: #9ca3af !important;
+}
+
+/* Employee avatar */
+html[data-theme="dark"] .company-calendar-avatar {
+  background: #312e81 !important;
+  color: #c7d2fe !important;
+}
+
+/* Employee status */
+html[data-theme="dark"] .company-calendar-employee-status .ant-tag {
+  color: #e5e7eb;
+}
+
+/* Footer */
+html[data-theme="dark"] .company-calendar-list-footer {
+  border-top-color: #374151 !important;
+  color: #9ca3af !important;
+}
+
+/* Calendar navigation controls */
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-header button {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-header button:hover {
+  color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-select-selector,
+html[data-theme="dark"] .company-calendar-main-card .ant-picker-calendar-mode-switch .ant-radio-button-wrapper {
+  background: #273449 !important;
+  border-color: #475569 !important;
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .company-calendar-main-card .ant-select-selection-item,
+html[data-theme="dark"] .company-calendar-main-card .ant-select-arrow {
+  color: #e5e7eb !important;
+}
+
+/* Loading state */
+html[data-theme="dark"] .company-calendar-loading {
+  color: #d1d5db !important;
+}
+
+html[data-theme="dark"] .company-calendar-loading .ant-spin-text {
+  color: #9ca3af !important;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  html[data-theme="dark"] .company-calendar-main-card,
+  html[data-theme="dark"] .company-calendar-people-card,
+  html[data-theme="dark"] .company-calendar-stat-card {
+    background: #1f2937 !important;
+  }
+}

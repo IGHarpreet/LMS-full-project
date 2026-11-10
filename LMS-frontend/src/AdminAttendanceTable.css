@@ -1,0 +1,258 @@
+.attendance-status-button {
+  padding: 0;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+.attendance-status-button .ant-tag {
+  margin-right: 0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.attendance-status-button:hover .ant-tag {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+.admin-attendance-page {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-attendance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.admin-attendance-header h3 {
+  margin-bottom: 5px !important;
+  color: #172033;
+}
+
+.admin-attendance-stats {
+  margin-bottom: 22px;
+}
+
+.admin-attendance-stat {
+  height: 100%;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-attendance-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(20, 35, 60, 0.08);
+}
+
+.admin-attendance-stat .ant-statistic-title {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.admin-attendance-stat .ant-statistic-content {
+  color: #172033;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.admin-attendance-stat .ant-statistic-content-prefix {
+  margin-right: 7px;
+  font-size: 17px;
+}
+
+.admin-attendance-table-card {
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(20, 35, 60, 0.04);
+}
+
+.admin-attendance-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.admin-attendance-toolbar h5 {
+  margin-bottom: 5px !important;
+}
+
+.admin-attendance-global-search {
+  width: 250px;
+  border-radius: 7px;
+}
+
+.admin-attendance-status-filter {
+  width: 170px;
+}
+
+.admin-attendance-active-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  background: #f8fafc;
+}
+
+.admin-attendance-table .ant-table {
+  border-radius: 8px;
+}
+
+.admin-attendance-table .ant-table-thead > tr > th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-attendance-table .ant-table-tbody > tr > td {
+  color: #334155;
+  vertical-align: middle;
+}
+
+.admin-attendance-table .ant-table-tbody > tr:hover > td {
+  background: #f8fafc;
+}
+
+.admin-attendance-table .ant-table-row-expand-icon {
+  border-radius: 4px;
+}
+
+.attendance-filter-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 12px;
+  min-width: 230px;
+}
+
+.attendance-filter-dropdown .ant-input {
+  margin-bottom: 3px;
+}
+
+.attendance-filter-dropdown .ant-picker {
+  width: 100%;
+}
+
+.attendance-hours-link {
+  padding: 0;
+  font-weight: 600;
+}
+
+.attendance-break-popover {
+  min-width: 210px;
+  max-width: 320px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.attendance-break-item {
+  padding: 9px 0;
+  border-bottom: 1px solid #edf0f5;
+  line-height: 1.8;
+}
+
+.attendance-break-item:last-child {
+  border-bottom: none;
+}
+
+.attendance-expanded-content {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.attendance-expanded-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.attendance-expanded-eod {
+  margin-top: 18px;
+}
+
+.attendance-expanded-eod > .ant-typography {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.employee-attendance-calendar {
+  min-height: 300px;
+}
+
+.attendance-calendar-present {
+  padding: 3px 5px;
+  border-radius: 5px;
+  background: #ecfdf3;
+  font-size: 11px;
+}
+
+.attendance-calendar-present .ant-badge-status-text {
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.exportbtn {
+  border-radius: 7px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-attendance-header {
+    align-items: flex-start;
+  }
+
+  .admin-attendance-toolbar {
+    align-items: stretch;
+  }
+
+  .admin-attendance-global-search,
+  .admin-attendance-status-filter {
+    width: 100%;
+  }
+
+  .admin-attendance-stat .ant-statistic-content {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-attendance-header {
+    flex-direction: column;
+  }
+
+  .admin-attendance-header .ant-space {
+    width: 100%;
+  }
+
+  .admin-attendance-header .ant-btn {
+    flex: 1;
+  }
+
+  .admin-attendance-toolbar {
+    flex-direction: column;
+  }
+
+  .admin-attendance-active-filters {
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,52 @@
+.announcement-hub { color: var(--ebs-text); }
+.announcement-hub .hub-stats { margin-bottom: 18px; }
+.announcement-hub .hub-stats .ant-card { border: 1px solid var(--ebs-border); border-radius: 12px; box-shadow: var(--ebs-shadow); }
+.announcement-hub .hub-stats .ant-statistic-title { color: var(--ebs-muted); font-size: 12px; }
+.announcement-hub .hub-stats .ant-statistic-content { color: var(--ebs-ink); font-weight: 700; }
+.announcement-hub .hub-main-card { border-radius: 14px; border: 1px solid var(--ebs-border); box-shadow: var(--ebs-shadow); background: var(--ebs-surface); }
+.announcement-hub .hub-main-card > .ant-card-body { padding: 18px 22px 24px; }
+.announcement-hub .ant-tabs-nav { margin-bottom: 22px; }
+.hub-section-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.hub-section-heading .ant-typography { margin-bottom: 3px; }
+.hub-section-heading h4.ant-typography { color: var(--ebs-ink); }
+.announcement-list { display: grid; gap: 13px; }
+.announcement-card { border-radius: 12px; border: 1px solid var(--ebs-border); background: var(--ebs-surface); box-shadow: none; }
+.announcement-card.is-unread { border-left: 3px solid var(--ebs-blue); }
+.announcement-card .ant-card-body { padding: 17px 18px 12px; }
+.announcement-card-top, .announcement-card-meta, .announcement-actions { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.announcement-date { font-size: 11px; }
+.announcement-title { margin: 12px 0 5px !important; color: var(--ebs-ink) !important; }
+.announcement-summary { margin-bottom: 10px !important; color: var(--ebs-text); }
+.announcement-card-meta { color: var(--ebs-muted); font-size: 12px; }
+.announcement-card-meta > span { display: inline-flex; gap: 6px; align-items: center; }
+.announcement-divider { margin: 12px 0 7px !important; }
+.announcement-actions { min-height: 30px; }
+.hub-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.hub-event-item { align-items: flex-start !important; gap: 12px; }
+.hub-event-date { width: 48px; min-width: 48px; height: 52px; border-radius: 9px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--ebs-blue-soft); color: var(--ebs-blue); }
+.hub-event-date strong { font-size: 19px; line-height: 21px; }
+.hub-event-date span { font-size: 10px; text-transform: uppercase; font-weight: 700; }
+.hub-event-content { min-width: 0; flex: 1; }
+.hub-event-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: 4px; font-size: 11px; }
+.hub-event-meta .ant-tag { margin-right: 0; }
+.hub-event-description { margin: 5px 0 0 !important; font-size: 12px; }
+.hub-calendar-note { margin-top: 15px; }
+.hub-calendar-dots { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; overflow: hidden; }
+.hub-calendar-dots .ant-badge { max-width: 100%; }
+.hub-calendar-event-name { display: inline-block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
+.hub-calendar-legend { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
+.announcement-detail-content { white-space: pre-wrap; line-height: 1.75; color: var(--ebs-text); }
+.announcement-detail h3 { margin-top: 14px; color: var(--ebs-ink); }
+.announcement-hub .ant-picker-calendar { background: transparent; }
+.announcement-hub .ant-picker-calendar-date-content { min-height: 42px; }
+.announcement-hub .ant-picker-calendar-date { border-radius: 8px; }
+@media (max-width: 767px) {
+  .announcement-hub .hub-main-card > .ant-card-body { padding: 12px; }
+  .hub-toolbar { align-items: stretch; }
+  .hub-toolbar > .ant-input-affix-wrapper { max-width: none !important; width: 100%; }
+  .hub-toolbar .ant-space { width: 100%; }
+  .hub-toolbar .ant-select { flex: 1; min-width: 120px !important; }
+  .announcement-card .ant-card-body { padding: 13px; }
+  .announcement-actions { align-items: flex-start; }
+  .hub-section-heading { flex-wrap: wrap; }
+}

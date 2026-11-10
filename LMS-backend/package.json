@@ -1,0 +1,51 @@
+{
+  "name": "accountcrudapi-nodejs",
+  "version": "1.0.0",
+  "description": "rest api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "restful",
+    "api"
+  ],
+  "author": "harpreet",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "csv-express": "^1.2.2",
+    "dayjs": "^1.11.23",
+    "dotenv": "^16.0.3",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "gapi-script": "^1.2.0",
+    "google-auth-library": "^8.5.2",
+    "googleapis": "^111.0.0",
+    "holidayapi": "^6.0.1",
+    "indian-holidays": "^2.0.1",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^8.5.1",
+    "messagemedia-messages-sdk": "^2.0.3",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.9.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20",
+    "pdf-master": "^1.1.0",
+    "pdfkit": "^0.13.0",
+    "swagger-jsdoc": "^6.0.0",
+    "swagger-ui-express": "^4.6.0"
+  },
+  "devDependencies": {
+    "twilio": "^4.7.2"
+  }
+}
