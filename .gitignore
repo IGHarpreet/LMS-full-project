@@ -20,7 +20,7 @@ Thumbs.db
 # Uploaded files and private employee data
 LMS-backend/api/uploads/
 LMS-backend/api/public/images/
-LMS-backend/api/public/monthly_attendance_report/
+# LMS-backend/api/public/monthly_attendance_report/
 LMS-frontend/public/uploads/
 
 # Editor settings
