@@ -652,3 +652,208 @@ html[data-theme="dark"] .ant-modal-footer {
     gap: 10px;
   }
 }
+
+/* =========================================
+   EMPLOYEE LEAVE DETAILS MODAL - DARK MODE
+   ========================================= */
+
+/* Modal main container */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-content,
+body.dark-theme .employee-leave-details-modal .ant-modal-content {
+  background: #172033 !important;
+  color: #e5e7eb !important;
+  border: 1px solid #334155 !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+
+/* Modal header */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-header,
+body.dark-theme .employee-leave-details-modal .ant-modal-header {
+  background: #172033 !important;
+  border-bottom: 1px solid #334155 !important;
+  padding: 18px 24px !important;
+}
+
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-title,
+body.dark-theme .employee-leave-details-modal .ant-modal-title {
+  color: #f8fafc !important;
+  font-weight: 600 !important;
+}
+
+/* Modal body */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-body,
+body.dark-theme .employee-leave-details-modal .ant-modal-body {
+  background: #172033 !important;
+  color: #e2e8f0 !important;
+  padding: 24px !important;
+}
+
+/* Modal footer */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-footer,
+body.dark-theme .employee-leave-details-modal .ant-modal-footer {
+  background: #172033 !important;
+  border-top: 1px solid #334155 !important;
+  padding: 14px 24px !important;
+}
+
+/* Close icon */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-close,
+body.dark-theme .employee-leave-details-modal .ant-modal-close {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-close:hover,
+body.dark-theme .employee-leave-details-modal .ant-modal-close:hover {
+  color: #ffffff !important;
+  background: #334155 !important;
+}
+
+/* Modal title icon */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-title .anticon,
+body.dark-theme .employee-leave-details-modal .ant-modal-title .anticon {
+  color: #60a5fa !important;
+}
+
+/* Descriptions main table */
+html[data-theme="dark"] .employee-leave-details-modal .ant-descriptions-view,
+body.dark-theme .employee-leave-details-modal .ant-descriptions-view {
+  border-color: #475569 !important;
+  background: #1e293b !important;
+}
+
+html[data-theme="dark"] .employee-leave-details-modal .ant-descriptions table,
+body.dark-theme .employee-leave-details-modal .ant-descriptions table {
+  border-color: #475569 !important;
+}
+
+/* Description labels */
+html[data-theme="dark"] .employee-leave-details-modal .ant-descriptions-item-label,
+body.dark-theme .employee-leave-details-modal .ant-descriptions-item-label {
+  background: #263449 !important;
+  color: #cbd5e1 !important;
+  border-color: #475569 !important;
+  font-weight: 600 !important;
+}
+
+/* Description values */
+html[data-theme="dark"] .employee-leave-details-modal .ant-descriptions-item-content,
+body.dark-theme .employee-leave-details-modal .ant-descriptions-item-content {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border-color: #475569 !important;
+  overflow-wrap: anywhere;
+}
+
+/* Text inside descriptions */
+html[data-theme="dark"] .employee-leave-details-modal .ant-descriptions-item-content *,
+body.dark-theme .employee-leave-details-modal .ant-descriptions-item-content * {
+  color: #e2e8f0;
+}
+
+/* Status section */
+html[data-theme="dark"] .employee-leave-details-modal .leave-details-status,
+body.dark-theme .employee-leave-details-modal .leave-details-status {
+  margin-bottom: 18px;
+}
+
+/* Pending notice */
+html[data-theme="dark"] .employee-leave-details-modal .leave-pending-notice,
+body.dark-theme .employee-leave-details-modal .leave-pending-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  color: #fcd34d !important;
+  background: rgba(245, 158, 11, 0.10) !important;
+  border: 1px solid rgba(245, 158, 11, 0.30) !important;
+  border-radius: 9px;
+  line-height: 1.6;
+}
+
+html[data-theme="dark"] .employee-leave-details-modal .leave-pending-notice .anticon,
+body.dark-theme .employee-leave-details-modal .leave-pending-notice .anticon {
+  color: #fbbf24 !important;
+  margin-top: 4px;
+}
+
+/* Close button */
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-footer .ant-btn,
+body.dark-theme .employee-leave-details-modal .ant-modal-footer .ant-btn {
+  background: #334155 !important;
+  color: #f8fafc !important;
+  border-color: #475569 !important;
+  border-radius: 7px !important;
+}
+
+html[data-theme="dark"] .employee-leave-details-modal .ant-modal-footer .ant-btn:hover,
+body.dark-theme .employee-leave-details-modal .ant-modal-footer .ant-btn:hover {
+  background: #475569 !important;
+  border-color: #64748b !important;
+}
+
+/* Modal overlay */
+html[data-theme="dark"] .employee-leave-details-modal-wrap .ant-modal-mask,
+body.dark-theme .employee-leave-details-modal-wrap .ant-modal-mask {
+  background: rgba(0, 0, 0, 0.72) !important;
+}
+
+/* =========================================
+   RESPONSIVE MODAL
+   ========================================= */
+
+@media (max-width: 576px) {
+  .employee-leave-details-modal {
+    max-width: calc(100vw - 24px);
+    margin: 12px auto;
+  }
+
+  html[data-theme="dark"] .employee-leave-details-modal .ant-modal-body,
+  body.dark-theme .employee-leave-details-modal .ant-modal-body {
+    padding: 14px !important;
+  }
+
+  .employee-leave-details-modal .ant-descriptions-item-label,
+  .employee-leave-details-modal .ant-descriptions-item-content {
+    padding: 9px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* =====================================
+   REJECTED STATUS TAG
+   ===================================== */
+
+/* Light mode */
+.leave-status-rejected {
+  color: #cf1322 !important;
+  background: #fff1f0 !important;
+  border: 1px solid #ffa39e !important;
+  font-weight: 600;
+  border-radius: 6px !important;
+}
+
+.leave-status-rejected .anticon {
+  color: #cf1322 !important;
+}
+
+/* Dark mode */
+html[data-theme="dark"] .leave-status-rejected,
+body.dark-theme .leave-status-rejected {
+  color: #fca5a5 !important;
+  background: rgba(239, 68, 68, 0.16) !important;
+  border: 1px solid rgba(248, 113, 113, 0.40) !important;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .leave-status-rejected .anticon,
+body.dark-theme .leave-status-rejected .anticon {
+  color: #f87171 !important;
+}
+
+/* Ensure nested tag text uses the correct color */
+html[data-theme="dark"] .leave-status-rejected,
+body.dark-theme .leave-status-rejected {
+  text-shadow: none !important;
+}

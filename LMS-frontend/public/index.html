@@ -5,6 +5,20 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#c8242b" />
+    <!-- Apply the saved theme before first paint (prevents a flash of the wrong theme).
+         Mirrors utils/theme.js: only "dark" is honoured, anything else is light, and the
+         light-only login screen (no access token) always stays light. -->
+    <script>
+      (function () {
+        var theme = "light";
+        try {
+          if (localStorage.getItem("ebs-theme") === "dark" && localStorage.getItem("access_token1")) {
+            theme = "dark";
+          }
+        } catch (e) { /* storage blocked -> light */ }
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
     <meta
       name="description"
       content="SBS Bela – employee attendance, leave and project management"

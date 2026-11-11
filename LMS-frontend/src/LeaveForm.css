@@ -1,286 +1,757 @@
-/* Main page */
+
+/* =========================================
+   LEAVE APPLICATION - BASE
+========================================= */
+
 .leave-page {
+  --leave-bg: #f5f7fb;
+  --leave-card: #ffffff;
+  --leave-text: #182235;
+  --leave-muted: #7b8799;
+  --leave-border: #e6eaf0;
+  --leave-input: #ffffff;
+  --leave-input-text: #263449;
+  --leave-soft: #f5f7fc;
+  --leave-primary: #c8242b;
+  --leave-primary-hover: #a91d24;
+  --leave-shadow: 0 8px 30px rgba(25, 42, 70, 0.055);
+
   width: 100%;
-  min-height: calc(100vh - 80px);
-  padding: 25px 35px 45px;
-  background: #f5f6fa;
-  box-sizing: border-box;
-}
-
-/* Date and time */
-.leave-datetime {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 25px;
-  margin-bottom: 18px;
-  color: #26354d;
-}
-
-.leave-datetime div {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.leave-datetime span {
-  font-size: 11px;
-  font-weight: 700;
-  color: #8994a8;
-  letter-spacing: 0.5px;
-}
-
-.leave-datetime strong {
-  font-size: 12px;
-  font-weight: 500;
-  color: #34445f;
-}
-
-/* Main card */
-.leave-application-card {
-  width: 100%;
-  max-width: 900px;
-  min-height: 310px;
-  margin: 0 auto;
-  padding: 30px 35px;
-  background: #ffffff;
-  border: 1px solid #e9edf4;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(30, 45, 75, 0.06);
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 10px;
-  box-sizing: border-box;
-}
-
-/* Left information section */
-.leave-card-info {
-  display: flex;
-  flex-direction: column;
   min-width: 0;
+  min-height: calc(100vh - 80px);
+  padding: clamp(14px, 2.5vw, 30px);
+  background: var(--leave-bg);
+  color: var(--leave-text);
+  box-sizing: border-box;
+  overflow-x: clip;
+}
+
+.leave-page *,
+.leave-page *::before,
+.leave-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.leave-page-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+}
+
+.leave-heading-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(200, 36, 43, 0.09);
+  color: var(--leave-primary);
+  font-size: 21px;
 }
 
 .leave-heading-row {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-wrap: wrap;
-  gap: 12px;
 }
 
 .leave-heading-row h2 {
   margin: 0;
-  font-size: 20px;
-  font-weight: 650;
-  color: #17243b;
-}
-
-.leave-request-badge {
-  padding: 5px 10px;
-  border-radius: 20px;
-  background: #f0f2ff;
-  color: #5969d9;
-  font-size: 9px;
+  font-size: clamp(18px, 2vw, 23px);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: var(--leave-text);
 }
 
-.leave-card-info p {
-  max-width: 250px;
-  margin-top: 10px;
-  color: #8994a8;
-  font-size: 12px;
-  line-height: 1.7;
+.leave-page-heading p {
+  margin: 4px 0 0;
+  color: var(--leave-muted);
+  font-size: 13px;
 }
 
-.leave-info-divider {
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.leave-form-container {
   width: 100%;
-  height: 1px;
-  margin-top: auto;
-  background: #edf0f5;
-}
-
-/* Form section */
-.leave-card-form {
-  width: 205%;
+  max-width: 1050px;
+  margin: 22px auto 0;
   min-width: 0;
 }
 
-.leave-card-form .ant-form-item {
-  margin-bottom: 14px;
+.leave-form-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 15px;
 }
 
-/* Text input */
-.leave-input {
-  height: 42px;
-  width: 100%;
-  border-radius: 7px;
-  border: 1px solid #dfe5ef;
-  padding: 0 12px;
+.leave-form-topbar h3 {
+  margin: 0;
+  color: var(--leave-text);
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.leave-form-topbar p {
+  margin: 5px 0 0;
+  color: var(--leave-muted);
   font-size: 12px;
-  color: #293b59;
+  line-height: 1.5;
+}
+
+/* =========================================
+   APPLICATION CARD
+========================================= */
+
+.leave-application-card.ant-card {
+  width: 100%;
+  background: var(--leave-card);
+  border: 1px solid var(--leave-border);
+  border-radius: 15px;
+  box-shadow: var(--leave-shadow);
+  overflow: visible;
+}
+
+.leave-application-card .ant-card-body {
+  padding: clamp(16px, 3vw, 32px);
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.leave-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.leave-section-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(200, 36, 43, 0.09);
+  color: var(--leave-primary);
+  font-size: 17px;
+}
+
+.leave-section-heading h4 {
+  margin: 0;
+  color: var(--leave-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.leave-section-heading p {
+  margin: 4px 0 0;
+  color: var(--leave-muted);
+  font-size: 11px;
+}
+
+/* =========================================
+   DIVIDERS
+========================================= */
+
+.leave-form-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--leave-border);
+  margin: 13px 0 25px;
+}
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+.leave-application-card .ant-form-item {
+  margin-bottom: 21px;
+}
+
+.leave-application-card .ant-form-item-label {
+  padding-bottom: 7px;
+}
+
+.leave-application-card .ant-form-item-label > label {
+  color: var(--leave-text);
+  font-size: 12px;
+  font-weight: 600;
+  height: auto;
+}
+
+.leave-application-card .ant-form-item-required::before {
+  color: #e5484d !important;
+}
+
+/* =========================================
+   TEXT INPUT
+========================================= */
+
+.leave-input.ant-input-affix-wrapper {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  border: 1px solid var(--leave-border);
+  background: var(--leave-input);
   box-shadow: none;
 }
 
+.leave-input input {
+  background: transparent;
+  color: var(--leave-input-text);
+  font-size: 13px;
+}
+
+.leave-input .ant-input-prefix {
+  color: var(--leave-muted);
+  margin-right: 9px;
+}
+
 .leave-input:hover,
-.leave-input:focus {
-  border-color: #C8242B;
-  box-shadow: 0 0 0 2px rgba(99, 118, 232, 0.08);
+.leave-input:focus,
+.leave-input-focused {
+  border-color: var(--leave-primary);
 }
 
-/* Input placeholder */
-.leave-input::placeholder {
-  color: #a7b1c2;
-  opacity: 1;
+.leave-input.ant-input-affix-wrapper-focused {
+  border-color: var(--leave-primary);
+  box-shadow: 0 0 0 3px rgba(200, 36, 43, 0.09);
 }
 
-/* Dropdown */
+/* =========================================
+   SELECT
+========================================= */
+
 .leave-select {
   width: 100%;
-  height: 42px;
+  min-height: 44px;
 }
 
 .leave-select .ant-select-selector {
-  height: 42px !important;
-  border-radius: 7px !important;
-  border: 1px solid #dfe5ef !important;
+  min-height: 44px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--leave-border) !important;
+  background: var(--leave-input) !important;
   box-shadow: none !important;
   display: flex;
   align-items: center;
   padding: 0 12px !important;
 }
 
-.leave-select .ant-select-selection-placeholder {
-  color: #a7b1c2 !important;
-  font-size: 12px;
-  opacity: 1;
-}
-
 .leave-select .ant-select-selection-item {
-  color: #293b59;
-  font-size: 12px;
-  line-height: 40px !important;
+  color: var(--leave-input-text);
+  font-size: 13px;
+  line-height: 42px !important;
 }
 
-.leave-select.ant-select-focused .ant-select-selector,
-.leave-select:hover .ant-select-selector {
-  border-color: #C8242B !important;
+.leave-select .ant-select-selection-placeholder {
+  color: var(--leave-muted);
+  font-size: 13px;
 }
 
-/* Date picker */
-.leave-date-picker {
-  height: 42px;
+.leave-select:hover .ant-select-selector,
+.leave-select.ant-select-focused .ant-select-selector {
+  border-color: var(--leave-primary) !important;
+}
+
+.leave-select.ant-select-focused .ant-select-selector {
+  box-shadow: 0 0 0 3px rgba(200, 36, 43, 0.08) !important;
+}
+
+/* =========================================
+   DATE PICKER
+========================================= */
+
+.leave-date-picker.ant-picker {
   width: 100%;
-  border-radius: 7px;
-  border: 1px solid #dfe5ef;
-  padding: 0 12px;
+  min-height: 44px;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--leave-border);
+  background: var(--leave-input);
   box-shadow: none;
 }
 
 .leave-date-picker input {
-  font-size: 12px;
-  color: #293b59;
+  color: var(--leave-input-text);
+  font-size: 13px;
 }
 
 .leave-date-picker input::placeholder {
-  color: #a7b1c2;
-  opacity: 1;
+  color: var(--leave-muted);
+}
+
+.leave-date-picker .ant-picker-suffix {
+  color: var(--leave-muted);
 }
 
 .leave-date-picker:hover,
-.leave-date-picker:focus {
-  border-color: #C8242B;
+.leave-date-picker.ant-picker-focused {
+  border-color: var(--leave-primary);
 }
 
-/* Footer buttons */
+.leave-date-picker.ant-picker-focused {
+  box-shadow: 0 0 0 3px rgba(200, 36, 43, 0.08);
+}
+
+/* =========================================
+   REASON TEXTAREA
+========================================= */
+
+.leave-reason-textarea.ant-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border-radius: 9px;
+  border: 1px solid var(--leave-border);
+  background: var(--leave-input);
+  color: var(--leave-input-text);
+  font-size: 13px;
+  line-height: 1.7;
+  resize: vertical;
+  box-shadow: none;
+}
+
+.leave-reason-textarea::placeholder {
+  color: var(--leave-muted);
+}
+
+.leave-reason-textarea:hover,
+.leave-reason-textarea:focus {
+  border-color: var(--leave-primary);
+}
+
+.leave-reason-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(200, 36, 43, 0.08);
+}
+
+.leave-application-card .ant-input-data-count {
+  color: var(--leave-muted);
+  font-size: 11px;
+}
+
+/* =========================================
+   DURATION PREVIEW
+========================================= */
+
+.leave-duration-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 15px;
+  margin: 0 0 20px;
+  border: 1px solid #cce9dc;
+  border-radius: 9px;
+  background: #f0faf5;
+  color: #17834f;
+}
+
+.leave-duration-preview > .anticon {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.leave-duration-preview div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.leave-duration-preview strong {
+  font-size: 12px;
+}
+
+.leave-duration-preview span {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   INFORMATION ALERT
+========================================= */
+
+.leave-info-alert {
+  margin-top: 5px;
+  margin-bottom: 24px;
+  border-radius: 9px;
+}
+
+.leave-info-alert .ant-alert-message {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.leave-info-alert .ant-alert-description {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER BUTTONS
+========================================= */
+
 .leave-form-footer {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  border-top: 1px solid #edf0f5;
-  margin-top: 10px;
-  padding-top: 16px;
+  gap: 12px;
+  border-top: 1px solid var(--leave-border);
+  padding-top: 22px;
+}
+
+.leave-form-footer .ant-btn {
+  min-height: 43px;
+  padding: 0 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .leave-back-button {
-  min-width: 95px;
-  height: 40px;
-  border-radius: 7px;
-  border: 1px solid #dfe3eb;
-  color: #4e5b70;
-  background: #ffffff;
-  font-size: 12px;
-  box-shadow: none;
+  background: var(--leave-card);
+  color: var(--leave-text);
+  border: 1px solid var(--leave-border);
 }
 
 .leave-back-button:hover {
-  color: #C8242B !important;
-  border-color: #C8242B !important;
+  color: var(--leave-primary) !important;
+  border-color: var(--leave-primary) !important;
 }
 
-.leave-apply-button {
-  min-width: 130px;
-  height: 40px;
-  border-radius: 7px;
-  background: #C8242B;
-  border-color: #C8242B;
-  font-size: 12px;
-  font-weight: 600;
+.leave-apply-button.ant-btn-primary {
+  background: var(--leave-primary);
+  border-color: var(--leave-primary);
   box-shadow: none;
 }
 
-.leave-apply-button:hover {
-  background: #cb4e54 !important;
-  border-color: #cb4e54 !important;
+.leave-apply-button.ant-btn-primary:hover {
+  background: var(--leave-primary-hover) !important;
+  border-color: var(--leave-primary-hover) !important;
 }
 
-/* Validation messages */
-.leave-card-form .ant-form-item-explain-error {
+/* =========================================
+   BOTTOM NOTE
+========================================= */
+
+.leave-form-bottom-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+  color: var(--leave-muted);
   font-size: 11px;
-  margin-top: 3px;
+  text-align: center;
 }
 
-/* Responsive layout */
+/* =========================================
+   VALIDATION
+========================================= */
+
+.leave-application-card .ant-form-item-explain-error {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.leave-application-card .ant-form-item-has-error .ant-input,
+.leave-application-card .ant-form-item-has-error .ant-picker,
+.leave-application-card .ant-form-item-has-error .ant-select-selector {
+  border-color: #ff4d4f !important;
+}
+
+/* =========================================
+   DARK MODE
+   Existing app theme: html[data-theme="dark"]
+========================================= */
+
+html[data-theme="dark"] .leave-page,
+body.dark-theme .leave-page {
+  --leave-bg: #111827;
+  --leave-card: #1b2535;
+  --leave-text: #f1f5f9;
+  --leave-muted: #9ba9bb;
+  --leave-border: #354256;
+  --leave-input: #182233;
+  --leave-input-text: #e5edf7;
+  --leave-soft: #243145;
+  --leave-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] .leave-application-card,
+body.dark-theme .leave-application-card {
+  background: var(--leave-card);
+  border-color: var(--leave-border);
+}
+
+html[data-theme="dark"] .leave-application-card .ant-card-body,
+body.dark-theme .leave-application-card .ant-card-body {
+  background: var(--leave-card);
+  border-radius: 15px;
+}
+
+html[data-theme="dark"] .leave-input,
+html[data-theme="dark"] .leave-input input,
+html[data-theme="dark"] .leave-reason-textarea,
+html[data-theme="dark"] .leave-date-picker,
+html[data-theme="dark"] .leave-select .ant-select-selector,
+body.dark-theme .leave-input,
+body.dark-theme .leave-reason-textarea,
+body.dark-theme .leave-date-picker,
+body.dark-theme .leave-select .ant-select-selector {
+  background: var(--leave-input) !important;
+  color: var(--leave-input-text) !important;
+  border-color: var(--leave-border) !important;
+}
+
+html[data-theme="dark"] .leave-input input::placeholder,
+html[data-theme="dark"] .leave-reason-textarea::placeholder,
+html[data-theme="dark"] .leave-date-picker input::placeholder,
+html[data-theme="dark"] .leave-select .ant-select-selection-placeholder {
+  color: var(--leave-muted) !important;
+}
+
+html[data-theme="dark"] .leave-application-card .ant-form-item-label > label,
+html[data-theme="dark"] .leave-section-heading h4,
+html[data-theme="dark"] .leave-heading-row h2,
+html[data-theme="dark"] .leave-form-topbar h3 {
+  color: var(--leave-text) !important;
+}
+
+html[data-theme="dark"] .leave-form-divider,
+html[data-theme="dark"] .leave-form-footer {
+  border-color: var(--leave-border);
+}
+
+html[data-theme="dark"] .leave-duration-preview {
+  background: #15382c;
+  border-color: #285b45;
+  color: #75d9a5;
+}
+
+html[data-theme="dark"] .leave-info-alert {
+  background: #1b3049;
+  border-color: #294969;
+}
+
+html[data-theme="dark"] .leave-info-alert .ant-alert-message,
+html[data-theme="dark"] .leave-info-alert .ant-alert-description {
+  color: #d9e9fa;
+}
+
+html[data-theme="dark"] .leave-back-button {
+  background: #243145;
+  border-color: var(--leave-border);
+  color: var(--leave-text);
+}
+
+html[data-theme="dark"] .leave-application-card .ant-input-data-count {
+  color: var(--leave-muted);
+}
+
+/* =========================================
+   DARK MODE - DROPDOWNS AND DATE POPUPS
+   These render outside .leave-page
+========================================= */
+
+html[data-theme="dark"] .ant-select-dropdown,
+body.dark-theme .ant-select-dropdown {
+  background: #1b2535 !important;
+  border: 1px solid #354256;
+}
+
+html[data-theme="dark"] .ant-select-item,
+body.dark-theme .ant-select-item {
+  color: #e5edf7 !important;
+}
+
+html[data-theme="dark"] .ant-select-item-option-active,
+body.dark-theme .ant-select-item-option-active {
+  background: #29394f !important;
+}
+
+html[data-theme="dark"] .ant-select-item-option-selected,
+body.dark-theme .ant-select-item-option-selected {
+  background: #34435a !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-panel-container,
+body.dark-theme .ant-picker-dropdown .ant-picker-panel-container {
+  background: #1b2535 !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-header,
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-content th,
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-cell,
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-header button {
+  color: #e5edf7 !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-cell-in-view {
+  color: #e5edf7 !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-cell:hover .ant-picker-cell-inner {
+  background: #34435a !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #c8242b !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .ant-picker-dropdown .ant-picker-today-btn {
+  color: #f0787e !important;
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS
+========================================= */
+
 @media (max-width: 768px) {
   .leave-page {
-    padding: 20px 15px 35px;
+    padding: 18px 14px 30px;
   }
 
-  .leave-application-card {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    padding: 25px 20px;
+  .leave-form-container {
+    margin-top: 18px;
   }
 
-  .leave-info-divider {
-    margin-top: 15px;
+  .leave-application-card .ant-card-body {
+    padding: 22px 18px;
   }
 
-  .leave-card-info p {
-    max-width: 100%;
+  .leave-form-topbar {
+    align-items: flex-start;
+  }
+
+  .leave-section-heading {
+    margin-bottom: 17px;
+  }
+
+  .leave-application-card .ant-form-item {
+    margin-bottom: 17px;
   }
 }
 
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
 @media (max-width: 480px) {
-  .leave-datetime {
-    justify-content: space-between;
-    gap: 10px;
+  .leave-page {
+    padding: 13px 10px 25px;
   }
 
-  .leave-datetime div {
-    gap: 5px;
+  .leave-page-heading {
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .leave-heading-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+
+  .leave-heading-row {
+    gap: 6px;
   }
 
   .leave-heading-row h2 {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .leave-page-heading p {
+    font-size: 11px;
+  }
+
+  .leave-form-topbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .leave-form-topbar h3 {
+    font-size: 15px;
+  }
+
+  .leave-application-card .ant-card-body {
+    padding: 17px 13px;
+  }
+
+  .leave-section-heading {
+    gap: 9px;
+  }
+
+  .leave-section-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .leave-section-heading h4 {
+    font-size: 13px;
+  }
+
+  .leave-section-heading p {
+    font-size: 10px;
   }
 
   .leave-form-footer {
-    justify-content: stretch;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
   }
 
-  .leave-form-footer button {
-    flex: 1;
-    min-width: 0;
+  .leave-form-footer .ant-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  .leave-duration-preview {
+    padding: 11px;
+  }
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+  .leave-page {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .leave-application-card .ant-card-body {
+    padding: 14px 10px;
+  }
+
+  .leave-heading-row h2 {
+    font-size: 15px;
+  }
+
+  .leave-form-topbar .ant-tag {
+    font-size: 10px;
+  }
+
+  .leave-application-card .ant-form-item-label > label {
+    font-size: 11px;
   }
 }

@@ -59,7 +59,6 @@ import {
   CameraOutlined,
   CopyOutlined,
   BankOutlined,
-  HeartOutlined,
   ReloadOutlined,
   HomeOutlined,
 } from "@ant-design/icons";

@@ -5,6 +5,7 @@ import "./LeaveForm.css";
 
 import "./styles/pro.css";
 import SiteLayout from "./shared/Sitelayout";
+import "./Responsive.css";
 import { ThemeProvider } from "styled-components";
 import { useTheme } from "./theme/useTheme";
 

@@ -1,0 +1,500 @@
+/* =========================================================
+   HRMS RESPONSIVE LAYER
+   Presentation-only overrides. Existing React behavior,
+   routes, API calls, forms, handlers and data are untouched.
+========================================================= */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.ebs-app,
+.ebs-app .ant-layout,
+.ebs-main,
+.ebs-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ebs-content > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ebs-app img,
+.ebs-app video,
+.ebs-app canvas,
+.ebs-app svg {
+  max-width: 100%;
+}
+
+.ebs-app .ant-card,
+.ebs-app .ant-card-body,
+.ebs-app .ant-form,
+.ebs-app .ant-form-item,
+.ebs-app .ant-form-item-control,
+.ebs-app .ant-form-item-control-input,
+.ebs-app .ant-form-item-control-input-content {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ebs-app .ant-input,
+.ebs-app .ant-input-affix-wrapper,
+.ebs-app .ant-select,
+.ebs-app .ant-picker,
+.ebs-app .ant-input-number,
+.ebs-app textarea.ant-input {
+  max-width: 100%;
+}
+
+.ebs-app .ant-input,
+.ebs-app .ant-input-affix-wrapper,
+.ebs-app .ant-select-selector,
+.ebs-app .ant-picker,
+.ebs-app .ant-input-number {
+  min-height: 36px;
+}
+
+.ebs-app .ant-btn {
+  max-width: 100%;
+  white-space: normal;
+}
+
+.ebs-app .ant-table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.ebs-app .ant-table-content {
+  max-width: 100%;
+  overflow-x: auto !important;
+}
+
+.ebs-app .ant-table-cell {
+  overflow-wrap: anywhere;
+}
+
+.ebs-app .ant-tabs {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.ebs-app .ant-tabs-nav {
+  max-width: 100%;
+}
+
+.ebs-app .ant-tabs-nav-wrap {
+  min-width: 0;
+}
+
+.ebs-app .ant-image,
+.ebs-app .ant-image-img {
+  max-width: 100%;
+}
+
+.ebs-app .ant-modal {
+  max-width: calc(100vw - 32px);
+}
+
+.ebs-app .ant-modal-body {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.ebs-app .ant-popover,
+.ant-popover {
+  max-width: calc(100vw - 20px);
+}
+
+.ant-popover-inner,
+.ant-dropdown,
+.ant-select-dropdown {
+  max-width: calc(100vw - 16px);
+}
+
+.ebs-app .ant-picker-dropdown,
+.ant-picker-dropdown {
+  max-width: calc(100vw - 12px);
+}
+
+/* Keep existing desktop navigation behavior; make the mobile
+   expanded Sider behave as an overlay without shifting content. */
+@media (max-width: 991px) {
+  .ebs-app .ebs-sider.ant-layout-sider {
+    position: fixed !important;
+    left: 0;
+    top: var(--ebs-header-h, 64px);
+    bottom: 0;
+    height: calc(100vh - var(--ebs-header-h, 64px));
+    height: calc(100dvh - var(--ebs-header-h, 64px));
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 8px 0 28px rgba(15, 23, 42, 0.18);
+  }
+
+  .ebs-app .ebs-sider.ant-layout-sider-collapsed {
+    box-shadow: none;
+  }
+
+  .ebs-main {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  .ebs-content {
+    width: 100%;
+    padding: 16px 14px 8px;
+  }
+
+  .ebs-header {
+    padding-inline: 14px;
+    gap: 10px;
+  }
+
+  .ebs-header-left,
+  .ebs-header-right {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .ebs-header-right {
+    justify-content: flex-end;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .ebs-content {
+    padding: 14px 12px 8px;
+  }
+
+  .ebs-page-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ebs-page-head > * {
+    max-width: 100%;
+  }
+
+  .ebs-app .ant-table table {
+    min-width: 620px;
+  }
+
+  .ebs-app .ant-table-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 8px;
+  }
+
+  .ebs-app .ant-card-head-wrapper {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ebs-app .ant-card-extra {
+    max-width: 100%;
+    padding: 8px 0;
+    white-space: normal;
+  }
+
+  .ebs-app .ant-modal {
+    width: calc(100vw - 32px) !important;
+    max-width: calc(100vw - 32px);
+    margin: 16px auto;
+  }
+
+  .ebs-app .ant-modal-body {
+    max-height: calc(100dvh - 190px);
+    overflow: auto;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-content {
+    table-layout: fixed;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-content th {
+    padding-inline: 2px;
+    font-size: 11px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date {
+    margin: 0;
+    padding: 4px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date-content {
+    overflow: hidden;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date-value {
+    font-size: 12px;
+  }
+
+  .ebs-app .ant-tabs-tab {
+    padding-inline: 10px;
+  }
+
+  .ebs-footer {
+    padding: 16px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .ebs-header {
+    height: 58px;
+    min-height: 58px;
+    padding-inline: 10px;
+  }
+
+  .ebs-header-left,
+  .ebs-header-right {
+    gap: 6px;
+  }
+
+  .ebs-toggle {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+  }
+
+  .ebs-brand {
+    gap: 7px;
+    font-size: 15px;
+  }
+
+  .ebs-brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .ebs-header-right .tb-icon-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    padding: 0;
+  }
+
+  .tb-user {
+    gap: 0;
+    padding: 2px;
+  }
+
+  .tb-user .ant-avatar {
+    flex: 0 0 auto;
+  }
+
+  .tb-attendance {
+    margin-inline: 0;
+    padding-inline: 6px;
+    font-size: 0;
+  }
+
+  .tb-attendance .anticon {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .ebs-content {
+    padding: 12px 10px 6px;
+  }
+
+  .ebs-page-title {
+    font-size: 19px;
+    line-height: 1.3;
+  }
+
+  .ebs-page-sub {
+    font-size: 12px;
+  }
+
+  .ebs-app .ant-card-body {
+    padding: 14px;
+  }
+
+  .ebs-app .ant-card-head {
+    min-height: 44px;
+    padding-inline: 14px;
+  }
+
+  .ebs-app .ant-card-head-title {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .ebs-app .ant-form-item {
+    margin-bottom: 16px;
+  }
+
+  .ebs-app .ant-form-item-label {
+    padding-bottom: 4px;
+  }
+
+  .ebs-app .ant-form-item-label > label {
+    height: auto;
+    white-space: normal;
+  }
+
+  .ebs-app .ant-form-item-control-input {
+    min-height: 36px;
+  }
+
+  .ebs-app .ant-btn {
+    min-height: 34px;
+  }
+
+  .ebs-app .ant-space {
+    flex-wrap: wrap;
+  }
+
+  .ebs-app .ant-space-item {
+    max-width: 100%;
+  }
+
+  .ebs-app .ant-table table {
+    min-width: 600px;
+  }
+
+  .ebs-app .ant-pagination {
+    padding-inline: 8px;
+  }
+
+  .ebs-app .ant-pagination-options {
+    margin-inline-start: 4px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-content th {
+    font-size: 9px;
+    padding-block: 8px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date {
+    min-height: 58px;
+    padding: 2px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date-value {
+    margin: 0;
+    font-size: 10px;
+  }
+
+  .ebs-app .ant-picker-calendar-full .ant-picker-calendar-date-content {
+    min-height: 28px;
+    font-size: 9px;
+  }
+
+  .ebs-app .ant-modal {
+    top: 10px;
+    width: calc(100vw - 20px) !important;
+    max-width: calc(100vw - 20px);
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+
+  .ebs-app .ant-modal-content {
+    max-height: calc(100dvh - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ebs-app .ant-modal-header,
+  .ebs-app .ant-modal-footer {
+    flex: 0 0 auto;
+    padding: 12px 14px;
+  }
+
+  .ebs-app .ant-modal-body {
+    min-height: 0;
+    max-height: none;
+    overflow: auto;
+    padding: 14px;
+  }
+
+  .ebs-app .ant-modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .ebs-app .ant-modal-footer .ant-btn {
+    margin: 0;
+  }
+
+  .ant-popover,
+  .ant-dropdown {
+    max-width: calc(100vw - 16px);
+  }
+
+  .tb-notification-center {
+    width: min(360px, calc(100vw - 20px));
+    max-width: calc(100vw - 20px);
+  }
+
+  .tb-user-card {
+    min-width: 0;
+    max-width: calc(100vw - 48px);
+  }
+
+  .ebs-footer {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+  .ebs-header {
+    padding-inline: 7px;
+  }
+
+  .ebs-header-left,
+  .ebs-header-right {
+    gap: 4px;
+  }
+
+  .ebs-header-right .tb-icon-btn {
+    width: 31px;
+    min-width: 31px;
+  }
+
+  .ebs-brand-mark {
+    width: 29px;
+    height: 29px;
+  }
+
+  .ebs-content {
+    padding-inline: 8px;
+  }
+
+  .ebs-app .ant-card-body {
+    padding: 11px;
+  }
+
+  .ebs-app .ant-table table {
+    min-width: 560px;
+  }
+}
+
+/* Keep theme-specific colors inherited from the existing theme system. */
+html[data-theme="dark"] .ebs-app .ant-modal-content,
+html[data-theme="dark"] .ebs-app .ant-modal-header,
+html[data-theme="dark"] .ebs-app .ant-modal-body,
+html[data-theme="dark"] .ebs-app .ant-modal-footer {
+  background: var(--ebs-surface, #161e2a);
+  color: var(--ebs-text, #d0d5dd);
+}

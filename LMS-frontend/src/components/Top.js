@@ -14,6 +14,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import jwt_decode from "../utils/jwtSafe";
+import { getStoredTheme, applyThemeToDocument, storeTheme } from "../utils/theme";
 import "./Top.css";
 
 const { Header } = Layout;
@@ -71,7 +72,7 @@ const Top = ({ collapsed, onToggle, onLogout }) => {
   const [notifOpen, setNotifOpen] = useState(false);
   const [passwordOpen, setPasswordOpen] = useState(false);
   const [changingPassword, setChangingPassword] = useState(false);
-  const [theme, setTheme] = useState(() => localStorage.getItem("ebs-theme") || "light");
+  const [theme, setTheme] = useState(() => getStoredTheme());
 
   const role = String(session.role || "employee").toLowerCase();
   const isManager = MANAGER.includes(role);
@@ -93,9 +94,8 @@ const Top = ({ collapsed, onToggle, onLogout }) => {
 
   /* theme: sets data-theme on <html>, remembers choice, notifies the app */
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    document.body.classList.toggle("dark-theme", theme === "dark");
-    localStorage.setItem("ebs-theme", theme);
+    applyThemeToDocument(theme);   // <html data-theme> + <body class="dark-theme">
+    storeTheme(theme);             // localStorage "ebs-theme"
     window.dispatchEvent(new CustomEvent("theme-changed", { detail: theme }));
   }, [theme]);
 
@@ -439,7 +439,7 @@ const Top = ({ collapsed, onToggle, onLogout }) => {
     {
       key: "theme",
       icon: theme === "dark" ? <BulbFilled /> : <BulbOutlined />,
-      label: theme === "dark" ? "Switch to light mode" : "Switch to dark mode",
+      label: theme === "dark" ? "Switch to Light Mode" : "Enable Dark Mode",
       onClick: () => setTheme((t) => (t === "dark" ? "light" : "dark")),
     },
     { type: "divider" },

@@ -511,3 +511,234 @@
     font-size: 20px;
   }
 }
+
+/* ==========================================
+   EVENTS & HOLIDAYS DROPDOWN - DARK MODE
+   ========================================== */
+
+/* Main dropdown */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-dropdown-menu,
+body.dark-theme .dashboard-holiday-dropdown .ant-dropdown-menu {
+  background: #172033 !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 12px !important;
+}
+
+/* Dropdown menu item */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-dropdown-menu-item,
+body.dark-theme .dashboard-holiday-dropdown .ant-dropdown-menu-item {
+  background: #172033 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Holiday calendar container */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-holiday-calendar,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-holiday-calendar {
+  background: #172033 !important;
+  color: #e2e8f0 !important;
+  padding: 12px !important;
+  min-width: 300px;
+}
+
+/* Calendar heading */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-holiday-calendar-heading,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-holiday-calendar-heading {
+  color: #f8fafc !important;
+  border-bottom: 1px solid #334155 !important;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+/* Calendar main background */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-calendar,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-calendar,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-fullcalendar,
+body.dark-theme .dashboard-holiday-dropdown .ant-fullcalendar {
+  background: #172033 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Calendar header */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-calendar-header,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-calendar-header {
+  background: #172033 !important;
+  border-bottom-color: #334155 !important;
+}
+
+/* Calendar month/year text */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-calendar .ant-picker-calendar-year-select,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-calendar .ant-picker-calendar-month-select,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-calendar .ant-picker-calendar-year-select,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-calendar .ant-picker-calendar-month-select {
+  color: #e2e8f0 !important;
+}
+
+/* Calendar weekday names */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-content th,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-content th,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-fullcalendar-column-header,
+body.dark-theme .dashboard-holiday-dropdown .ant-fullcalendar-column-header {
+  color: #94a3b8 !important;
+  background: #172033 !important;
+}
+
+/* Calendar cells */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-fullcalendar-cell,
+body.dark-theme .dashboard-holiday-dropdown .ant-fullcalendar-cell {
+  background: #172033 !important;
+}
+
+/* Calendar date numbers */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell .ant-picker-cell-inner,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell .ant-picker-cell-inner,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-fullcalendar-value,
+body.dark-theme .dashboard-holiday-dropdown .ant-fullcalendar-value {
+  color: #e2e8f0 !important;
+}
+
+/* Calendar date hover */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell:hover .ant-picker-cell-inner,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell:hover .ant-picker-cell-inner {
+  background: #334155 !important;
+}
+
+/* Today's date */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell-today .ant-picker-cell-inner::before,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell-today .ant-picker-cell-inner::before {
+  border-color: #60a5fa !important;
+}
+
+/* Selected date */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell-selected .ant-picker-cell-inner,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell-selected .ant-picker-cell-inner {
+  background: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+/* Selected date number */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-cell-selected .ant-picker-cell-inner *,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-cell-selected .ant-picker-cell-inner * {
+  color: #ffffff !important;
+}
+
+/* Calendar borders */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-content th,
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-content td,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-content th,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-content td {
+  border-color: #334155 !important;
+}
+
+/* Calendar navigation buttons */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-picker-header button,
+body.dark-theme .dashboard-holiday-dropdown .ant-picker-header button {
+  color: #cbd5e1 !important;
+}
+
+/* Selected date event section */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-selected-holiday-events,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-selected-holiday-events {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  margin-top: 14px;
+}
+
+/* Selected date heading */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-selected-holiday-heading,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-selected-holiday-heading {
+  color: #f8fafc !important;
+  border-bottom: 1px solid #334155 !important;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Individual event */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-selected-event-item,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-selected-event-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 8px;
+  background: #263449 !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+/* Event information */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-holiday-event-name,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-holiday-event-name {
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-holiday-event-source,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-holiday-event-source {
+  color: #94a3b8 !important;
+}
+
+/* Calendar note */
+html[data-theme="dark"] .dashboard-holiday-dropdown .holiday-calendar-note,
+body.dark-theme .dashboard-holiday-dropdown .holiday-calendar-note {
+  display: block;
+  color: #94a3b8 !important;
+  margin-top: 12px;
+}
+
+/* General text */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-typography,
+body.dark-theme .dashboard-holiday-dropdown .ant-typography {
+  color: #e2e8f0 !important;
+}
+
+/* Empty state */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-empty-description,
+body.dark-theme .dashboard-holiday-dropdown .ant-empty-description {
+  color: #94a3b8 !important;
+}
+
+/* Warning alert */
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-alert-warning,
+body.dark-theme .dashboard-holiday-dropdown .ant-alert-warning {
+  background: rgba(245, 158, 11, 0.10) !important;
+  border-color: rgba(245, 158, 11, 0.35) !important;
+}
+
+html[data-theme="dark"] .dashboard-holiday-dropdown .ant-alert-message,
+body.dark-theme .dashboard-holiday-dropdown .ant-alert-message {
+  color: #fcd34d !important;
+}
+
+/* Company and Google event indicators */
+.dashboard-event-dot {
+  flex-shrink: 0;
+}
+
+/* Calendar event count */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-calendar-event-count,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-calendar-event-count {
+  color: #cbd5e1 !important;
+}
+
+/* Calendar event indicator area */
+html[data-theme="dark"] .dashboard-holiday-dropdown .dashboard-calendar-event-indicators,
+body.dark-theme .dashboard-holiday-dropdown .dashboard-calendar-event-indicators {
+  color: #cbd5e1 !important;
+}
+
+/* Responsive dropdown */
+@media (max-width: 576px) {
+  .dashboard-holiday-dropdown {
+    max-width: calc(100vw - 16px);
+  }
+
+  .dashboard-holiday-dropdown .dashboard-holiday-calendar {
+    min-width: 0;
+    width: 100%;
+    padding: 8px !important;
+  }
+}

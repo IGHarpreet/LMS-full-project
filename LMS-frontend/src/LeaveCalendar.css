@@ -709,3 +709,194 @@ html[data-theme="dark"] .leave-popover-content .status-text.rejected {
     padding: 2px 3px;
   }
 }
+
+/* =========================================
+   LEAVE CALENDAR - DARK MODE
+========================================= */
+
+html[data-theme="dark"] .leave-calendar-wrapper {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+/* Summary cards */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-summary-card {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .summary-label {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .summary-count {
+    color: #f9fafb !important;
+}
+
+/* Legend */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-calendar-legend,
+html[data-theme="dark"] .leave-calendar-wrapper .leave-calendar-legend span {
+    color: #d1d5db !important;
+}
+
+/* Calendar */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar,
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-panel {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-content th {
+    color: #cbd5e1 !important;
+    background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-content td {
+    border-color: #374151 !important;
+}
+
+/* Calendar header */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header {
+    background: #111827 !important;
+    border-bottom: 1px solid #374151 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-select-selector,
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-radio-button-wrapper {
+    background: #273449 !important;
+    color: #e5e7eb !important;
+    border-color: #4b5563 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-header .ant-radio-button-wrapper-checked {
+    background: #4f46e5 !important;
+    color: #ffffff !important;
+    border-color: #4f46e5 !important;
+}
+
+/* Calendar dates */
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date-value {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-calendar-date-content {
+    color: #d1d5db !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell:hover .ant-picker-calendar-date {
+    background: #273449 !important;
+    border-color: #6366f1 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell-today .ant-picker-calendar-date {
+    border-color: #818cf8 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .ant-picker-cell-selected .ant-picker-calendar-date {
+    background: #312e81 !important;
+    border-color: #6366f1 !important;
+}
+
+/* Approved dates */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-approved-date {
+    background: #123329 !important;
+    border-color: #166534 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-approved-date .ant-picker-calendar-date-value {
+    color: #86efac !important;
+}
+
+/* Pending dates */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-pending-date {
+    background: #3b2d13 !important;
+    border-color: #92400e !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-pending-date .ant-picker-calendar-date-value {
+    color: #fcd34d !important;
+}
+
+/* Rejected dates */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-rejected-date {
+    background: #3b1d25 !important;
+    border-color: #991b1b !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-rejected-date .ant-picker-calendar-date-value {
+    color: #fca5a5 !important;
+}
+
+/* Leave chips */
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-approved {
+    background: #14532d !important;
+    color: #bbf7d0 !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-pending {
+    background: #713f12 !important;
+    color: #fde68a !important;
+}
+
+html[data-theme="dark"] .leave-calendar-wrapper .leave-chip-rejected {
+    background: #7f1d1d !important;
+    color: #fecaca !important;
+}
+
+/* Popover */
+html[data-theme="dark"] .ant-popover .ant-popover-inner {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-inner-content {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-arrow-content {
+    background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .leave-popover-heading {
+    color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .leave-detail-row span,
+html[data-theme="dark"] .leave-detail-reason span {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .leave-detail-row strong {
+    color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .leave-detail-reason {
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .leave-detail-reason p {
+    color: #d1d5db !important;
+    background: #273449 !important;
+}
+
+/* Popover status */
+html[data-theme="dark"] .leave-popover-content .status-text.approved {
+    color: #4ade80 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content .status-text.pending {
+    color: #fbbf24 !important;
+}
+
+html[data-theme="dark"] .leave-popover-content .status-text.rejected {
+    color: #f87171 !important;
+}

@@ -60,8 +60,6 @@ import {
   EnvironmentOutlined,
   BankOutlined,
   LinkedinOutlined,
-  HeartOutlined,
-  CloseCircleOutlined,
 } from "@ant-design/icons";
 
 import "./EmployeeProfile.css";

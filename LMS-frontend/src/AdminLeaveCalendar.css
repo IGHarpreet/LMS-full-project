@@ -769,3 +769,303 @@
     font-size: 9px;
   }
 }
+
+/* ==========================================
+   ADMIN LEAVE PAGE - DARK MODE
+========================================== */
+
+html[data-theme="dark"] .admin-leave-page {
+    background: #0f172a !important;
+    color: #e5e7eb !important;
+}
+
+/* Page heading */
+
+html[data-theme="dark"] .admin-leave-page-title,
+html[data-theme="dark"] .admin-leave-calendar-heading h5,
+html[data-theme="dark"] .admin-leave-filter-heading h5,
+html[data-theme="dark"] .admin-leave-selected-header h5 {
+    color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .admin-leave-heading-icon {
+    background: #273449 !important;
+    color: #818cf8 !important;
+}
+
+/* Summary cards */
+
+html[data-theme="dark"] .admin-leave-stat-card,
+html[data-theme="dark"] .admin-leave-filter-card,
+html[data-theme="dark"] .admin-leave-calendar-card,
+html[data-theme="dark"] .admin-leave-selected-card {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+html[data-theme="dark"] .admin-leave-stat-card .ant-card-body,
+html[data-theme="dark"] .admin-leave-filter-card .ant-card-body,
+html[data-theme="dark"] .admin-leave-calendar-card .ant-card-body,
+html[data-theme="dark"] .admin-leave-selected-card .ant-card-body {
+    background: transparent !important;
+}
+
+html[data-theme="dark"] .admin-leave-stat-card .ant-statistic-title {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-stat-card .ant-statistic-content {
+    color: #f9fafb !important;
+}
+
+/* Filters */
+
+html[data-theme="dark"] .admin-leave-filter-card .ant-input,
+html[data-theme="dark"] .admin-leave-filter-card .ant-input-affix-wrapper,
+html[data-theme="dark"] .admin-leave-filter-card .ant-select-selector {
+    background: #273449 !important;
+    border-color: #4b5563 !important;
+    color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .admin-leave-filter-card .ant-input::placeholder {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-filter-card .ant-input-prefix,
+html[data-theme="dark"] .admin-leave-filter-card .ant-select-arrow {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-filter-card .ant-select-selection-item,
+html[data-theme="dark"] .admin-leave-filter-card .ant-select-selection-placeholder {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .admin-leave-filter-result {
+    color: #9ca3af !important;
+}
+
+/* Calendar legend */
+
+html[data-theme="dark"] .admin-leave-legend {
+    background: #273449 !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-legend span {
+    color: #d1d5db !important;
+}
+
+/* Calendar background */
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar,
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-panel {
+    background: #1f2937 !important;
+    color: #e5e7eb !important;
+}
+
+/* Calendar header */
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-header {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-header .ant-select-selector,
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-header .ant-radio-button-wrapper {
+    background: #273449 !important;
+    border-color: #4b5563 !important;
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-header .ant-select-selection-item {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-header .ant-radio-button-wrapper-checked {
+    background: #4f46e5 !important;
+    border-color: #6366f1 !important;
+    color: #ffffff !important;
+}
+
+/* Weekday names */
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-content th {
+    background: #1f2937 !important;
+    color: #9ca3af !important;
+    border-color: #374151 !important;
+}
+
+/* Calendar cells */
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-content td {
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-date {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-date-value {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-date:hover {
+    background: #273449 !important;
+    border-color: #6366f1 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-date-today {
+    border-color: #818cf8 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-calendar-date-today .ant-picker-calendar-date-value {
+    color: #a5b4fc !important;
+}
+
+/* Selected date */
+
+html[data-theme="dark"] .admin-leave-calendar-card .ant-picker-cell-selected .ant-picker-calendar-date {
+    background: #312e81 !important;
+    border-color: #6366f1 !important;
+}
+
+/* Calendar events */
+
+html[data-theme="dark"] .admin-leave-calendar-event {
+    background: #3b321d !important;
+    border-left-color: #fbbf24 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-event.approved {
+    background: #123329 !important;
+    border-left-color: #22c55e !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-event.pending {
+    background: #3b321d !important;
+    border-left-color: #fbbf24 !important;
+}
+
+html[data-theme="dark"] .admin-leave-calendar-event.denied {
+    background: #3b1d25 !important;
+    border-left-color: #f87171 !important;
+}
+
+html[data-theme="dark"] .admin-leave-event-name {
+    color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .admin-leave-event-type,
+html[data-theme="dark"] .admin-leave-event-status {
+    color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .admin-leave-event-avatar {
+    background: #3730a3 !important;
+    color: #c7d2fe !important;
+}
+
+html[data-theme="dark"] .admin-leave-more {
+    color: #a5b4fc !important;
+}
+
+/* Selected date details */
+
+html[data-theme="dark"] .admin-leave-detail-card {
+    background: #273449 !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-detail-card:hover {
+    background: #303e53 !important;
+    border-color: #6366f1 !important;
+}
+
+html[data-theme="dark"] .admin-leave-employee-name {
+    color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .admin-leave-department {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-avatar {
+    background: #3730a3 !important;
+    color: #c7d2fe !important;
+}
+
+html[data-theme="dark"] .admin-leave-info-label {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-employee-id {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-reason {
+    background: #1f2937 !important;
+    color: #d1d5db !important;
+}
+
+html[data-theme="dark"] .admin-leave-reason .anticon {
+    color: #9ca3af !important;
+}
+
+html[data-theme="dark"] .admin-leave-card-divider {
+    border-color: #374151 !important;
+}
+
+/* Popover - Ant Design renders this outside the page */
+
+html[data-theme="dark"] .ant-popover .ant-popover-inner {
+    background: #1f2937 !important;
+    border: 1px solid #374151 !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4) !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-title {
+    color: #f9fafb !important;
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-inner-content {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .ant-popover .ant-popover-arrow::before,
+html[data-theme="dark"] .ant-popover .ant-popover-arrow-content {
+    background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .admin-leave-popover-item {
+    border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .admin-leave-popover-item > div {
+    color: #9ca3af !important;
+}
+
+/* Dropdown menus rendered outside the page */
+
+html[data-theme="dark"] .ant-select-dropdown {
+    background: #1f2937 !important;
+}
+
+html[data-theme="dark"] .ant-select-item {
+    color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .ant-select-item-option-active,
+html[data-theme="dark"] .ant-select-item-option-selected {
+    background: #374151 !important;
+}
+
+/* Loading */
+
+html[data-theme="dark"] .admin-leave-loading {
+    color: #e5e7eb !important;
+}

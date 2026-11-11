@@ -46,6 +46,6 @@
     "swagger-ui-express": "^4.6.0"
   },
   "devDependencies": {
-    "twilio": "^4.7.2"
+    "twilio": "^4.23.0"
   }
 }

@@ -1,6 +1,5 @@
 
 import React, { useEffect, useMemo, useState } from "react";
-import moment from "moment";
 import axios from "axios";
 import {
   Table,
@@ -39,14 +38,12 @@ import {
   SafetyCertificateOutlined,
   ReloadOutlined,
   LinkedinOutlined,
-  ManOutlined,
-  WomanOutlined,
   UserSwitchOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import jwt_decode from "../utils/jwtSafe";
 import "../../src/Employees.css";
-
+import moment from "moment";
 const { Title, Text } = Typography;
 const { Option } = Select;
 
@@ -71,17 +68,37 @@ const Employees = ({ dataSource }) => {
   const [roleFilter, setRoleFilter] = useState("all");
   const [genderFilter, setGenderFilter] = useState("all");
   const [departmentOptions, setDepartmentOptions] = useState([]);
-
   useEffect(() => {
-    axios
-      .get(`${BASE_URL}/announcements/meta/audience`)
-      .then((res) => {
-        setDepartmentOptions(res.data?.departments || []);
-      })
-      .catch((error) => {
-        console.error("Unable to load departments:", error);
-        message.error("Unable to load departments.");
-      });
+    const fetchDepartments = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/announcements/meta/audience`
+        );
+
+        const departments = response.data?.departments || [];
+
+        setDepartmentOptions(
+          departments.map((department) => {
+            if (typeof department === "string") {
+              return {
+                label: department,
+                value: department,
+              };
+            }
+
+            return {
+              label: department.name || department.department,
+              value: department.name || department.department,
+            };
+          }).filter((department) => department.label && department.value)
+        );
+      } catch (error) {
+        console.error("Unable to fetch departments:", error);
+        message.error("Unable to load department options.");
+      }
+    };
+
+    fetchDepartments();
   }, []);
   // Get logged-in user's role
   useEffect(() => {
@@ -130,22 +147,6 @@ const Employees = ({ dataSource }) => {
       employeelist();
     }
   }, [employeename.role]);
-
-  const getImageUrl = (filename) => {
-    if (!filename || typeof filename !== "string") {
-      return undefined;
-    }
-
-    if (
-      filename.startsWith("http://") ||
-      filename.startsWith("https://") ||
-      filename.startsWith("data:")
-    ) {
-      return filename;
-    }
-
-    return `${BASE_URL}/images/${filename}`;
-  };
 
   // Add employee modal
   const showModal = () => {
@@ -202,17 +203,23 @@ const Employees = ({ dataSource }) => {
   // Open edit modal
   const onEditEmployee = (record) => {
     setEditingEmployee(record);
-    const appraisalDate = record.appraisal
-      ? moment(record.appraisal, ["YYYY-MM-DD", moment.ISO_8601], true)
-      : null;
+
     editForm.setFieldsValue({
       name: record.name || "",
       email: record.email || "",
       contact: record.contact != null ? String(record.contact) : "",
       gender: record.gender || undefined,
       role: record.role || undefined,
-      department: record.department || "",
+      department: record.department || undefined,
+
+      // Keep joiningDate as a string because it still uses Input type="date"
       joiningDate: record.joiningDate || "",
+
+      // Convert appraisal string into a Moment object
+      appraisal:
+        record.appraisal && moment(record.appraisal).isValid()
+          ? moment(record.appraisal)
+          : null,
       fatherName: record.fatherName || "",
       motherName: record.motherName || "",
       bloodGroup: record.bloodGroup || "",
@@ -221,9 +228,6 @@ const Employees = ({ dataSource }) => {
       adharNumber: record.adharNumber || "",
       panNumber: record.panNumber || "",
       salary: record.salary || "",
-      appraisal: appraisalDate && appraisalDate.isValid()
-        ? appraisalDate
-        : null,
       linkedinprofilelink: record.linkedinprofilelink || "",
       profilepicture: record.profilepicture || "",
       employeeskills: Array.isArray(record.employeeskills)
@@ -260,8 +264,11 @@ const Employees = ({ dataSource }) => {
         contact: String(values.contact ?? "").trim(),
         gender: values.gender,
         role: values.role,
-        department: String(values.department ?? "").trim(),
+        department: values.department || "",
         joiningDate: values.joiningDate || "",
+        appraisal: values.appraisal
+          ? values.appraisal.format("YYYY-MM-DD")
+          : "",
         fatherName: String(values.fatherName ?? "").trim(),
         motherName: String(values.motherName ?? "").trim(),
         bloodGroup: values.bloodGroup || "",
@@ -270,9 +277,6 @@ const Employees = ({ dataSource }) => {
         adharNumber: String(values.adharNumber ?? "").trim(),
         panNumber: String(values.panNumber ?? "").trim(),
         salary: String(values.salary ?? "").trim(),
-        appraisal: values.appraisal
-          ? values.appraisal.format("YYYY-MM-DD")
-          : "",
         linkedinprofilelink: String(values.linkedinprofilelink ?? "").trim(),
         profilepicture: String(values.profilepicture ?? "").trim(),
         employeeskills: String(values.employeeskills ?? "")
@@ -414,11 +418,12 @@ const Employees = ({ dataSource }) => {
         <div className="employee-name-cell">
           <Avatar
             className="employee-avatar"
-            size={44}
-            src={getImageUrl(record.profilepicture || record.imageUrl)}
+            src={record.profilepicture || record.imageUrl || undefined}
             icon={<UserOutlined />}
           >
-            {getInitials(name)}
+            {!record.profilepicture && !record.imageUrl
+              ? getInitials(name)
+              : null}
           </Avatar>
           <div className="employee-name-details">
             <Text strong className="employee-primary-name">
@@ -766,8 +771,10 @@ const Employees = ({ dataSource }) => {
                     {record.salary ? `₹${record.salary}` : "—"}
                   </Descriptions.Item>
 
-                  <Descriptions.Item label="Appraisal">
-                    {record.appraisal || "—"}
+                  <Descriptions.Item label="Appraisal date">
+                    {record.appraisal && moment(record.appraisal).isValid()
+                      ? moment(record.appraisal).format("DD MMM YYYY")
+                      : "—"}
                   </Descriptions.Item>
 
                   {/* <Descriptions.Item label="Skills">
@@ -1063,24 +1070,15 @@ const Employees = ({ dataSource }) => {
             </Col>
 
             <Col xs={24} md={12}>
-              <Form.Item
-                label="Department"
-                name="department"
-                rules={[{ required: true, message: "Please select a department." }]}
-              >
+              <Form.Item label="Department" name="department">
                 <Select
                   size="large"
-                  showSearch
                   placeholder="Select department"
-                  optionFilterProp="children"
+                  showSearch
+                  optionFilterProp="label"
                   allowClear
-                >
-                  {departmentOptions.map((department) => (
-                    <Option key={department} value={department}>
-                      {department}
-                    </Option>
-                  ))}
-                </Select>
+                  options={departmentOptions}
+                />
               </Form.Item>
             </Col>
 
@@ -1119,10 +1117,7 @@ const Employees = ({ dataSource }) => {
             </Col>
 
             <Col xs={24} md={12}>
-              <Form.Item
-                label="Appraisal Date"
-                name="appraisal"
-              >
+              <Form.Item label="Appraisal date" name="appraisal">
                 <DatePicker
                   size="large"
                   style={{ width: "100%" }}
@@ -1170,35 +1165,11 @@ const Employees = ({ dataSource }) => {
               </Form.Item>
             </Col>
 
-            {/* <Col span={24}>
-              <Form.Item label="Profile picture" name="profilepicture">
-                <Input
-                  size="large"
-                  placeholder="Enter image URL or image filename"
-                  prefix={<UserOutlined />}
-                />
+            <Col span={24}>
+              <Form.Item label="Profile picture URL" name="profilepicture">
+                <Input size="large" placeholder="Enter an image URL" />
               </Form.Item>
-
-              {editingEmployee && (
-                <div className="employee-edit-picture-preview">
-                  <Avatar
-                    size={90}
-                    src={getImageUrl(editForm.getFieldValue("profilepicture"))}
-                    icon={<UserOutlined />}
-                  >
-                    {getInitials(editingEmployee.name)}
-                  </Avatar>
-
-                  <div>
-                    <Text strong>{editingEmployee.name}</Text>
-                    <br />
-                    <Text type="secondary">
-                      Current profile picture preview
-                    </Text>
-                  </div>
-                </div>
-              )}
-            </Col> */}
+            </Col>
           </Row>
 
           <div className="employee-modal-footer">

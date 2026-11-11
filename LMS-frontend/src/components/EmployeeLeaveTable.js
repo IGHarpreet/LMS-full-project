@@ -94,7 +94,7 @@ const Employeeleavetable = () => {
           <Tag
             color="processing"
             icon={<ClockCircleOutlined />}
-            className="leave-status-tag"
+            className="leave-status-tag leave-status-rejected"
           >
             Pending
           </Tag>
@@ -105,7 +105,7 @@ const Employeeleavetable = () => {
           <Tag
             color="success"
             icon={<CheckCircleOutlined />}
-            className="leave-status-tag"
+            className="leave-status-tag leave-status-rejected"
           >
             Approved
           </Tag>
@@ -117,7 +117,7 @@ const Employeeleavetable = () => {
           <Tag
             color="error"
             icon={<CloseCircleOutlined />}
-            className="leave-status-tag"
+            className="leave-status-tag leave-status-rejected"
           >
             Rejected
           </Tag>
@@ -128,7 +128,7 @@ const Employeeleavetable = () => {
           <Tag
             color="default"
             icon={<QuestionCircleOutlined />}
-            className="leave-status-tag"
+            className="leave-status-tag leave-status-rejected"
           >
             {status || "Not Available"}
           </Tag>
@@ -520,94 +520,92 @@ const Employeeleavetable = () => {
       </div>
 
       {/* Leave details modal */}
-      <Modal
-        title={
-          <Space>
-            <FileTextOutlined />
-            Leave Request Details
-          </Space>
-        }
-        visible={detailsVisible}
-        onCancel={() => {
-          setDetailsVisible(false);
-          setSelectedLeave(null);
-        }}
-        footer={[
-          <Button
-            key="close"
-            onClick={() => {
-              setDetailsVisible(false);
-              setSelectedLeave(null);
-            }}
-          >
-            Close
-          </Button>,
-        ]}
-        width={650}
-      >
+     {/* Leave details modal */}
+<Modal
+  title={
+    <Space>
+      <FileTextOutlined />
+      Leave Request Details
+    </Space>
+  }
+  visible={detailsVisible}
+  onCancel={() => {
+    setDetailsVisible(false);
+    setSelectedLeave(null);
+  }}
+  footer={[
+    <Button
+      key="close"
+      onClick={() => {
+        setDetailsVisible(false);
+        setSelectedLeave(null);
+      }}
+    >
+      Close
+    </Button>,
+  ]}
+  width={650}
+  className="employee-leave-details-modal"
+  wrapClassName="employee-leave-details-modal-wrap"
+  destroyOnClose
+>
+  {selectedLeave && (
+    <div className="leave-details-modal">
 
-        {selectedLeave && (
-          <div className="leave-details-modal">
+      <div className="leave-details-status">
+        {renderApprovalStatus(selectedLeave.ApprovalStatus)}
+      </div>
 
-            <div className="leave-details-status">
-              {renderApprovalStatus(selectedLeave.ApprovalStatus)}
-            </div>
+      <Descriptions bordered column={2} size="small">
 
-            <Descriptions
-              bordered
-              column={2}
-              size="small"
-            >
+        <Descriptions.Item label="Leave ID">
+          #{String(selectedLeave._id || "").slice(-6).toUpperCase()}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Leave ID">
-                #{String(selectedLeave._id || "").slice(-6).toUpperCase()}
-              </Descriptions.Item>
+        <Descriptions.Item label="Leave Type">
+          {selectedLeave.LeaveType || "N/A"}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Leave Type">
-                {selectedLeave.LeaveType || "N/A"}
-              </Descriptions.Item>
+        <Descriptions.Item label="From">
+          {formatDate(selectedLeave.LeaveDate)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="From">
-                {formatDate(selectedLeave.LeaveDate)}
-              </Descriptions.Item>
+        <Descriptions.Item label="To">
+          {formatDate(selectedLeave.ReturnDate)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="To">
-                {formatDate(selectedLeave.ReturnDate)}
-              </Descriptions.Item>
+        <Descriptions.Item label="Duration">
+          {getDuration(selectedLeave)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Duration">
-                {getDuration(selectedLeave)}
-              </Descriptions.Item>
+        <Descriptions.Item label="Applied On">
+          {formatDate(getAppliedDate(selectedLeave))}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Applied On">
-                {formatDate(getAppliedDate(selectedLeave))}
-              </Descriptions.Item>
+        <Descriptions.Item label="Approval Status" span={2}>
+          {renderApprovalStatus(selectedLeave.ApprovalStatus)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Approval Status" span={2}>
-                {renderApprovalStatus(selectedLeave.ApprovalStatus)}
-              </Descriptions.Item>
+        <Descriptions.Item label="Reason" span={2}>
+          {getReason(selectedLeave)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Reason" span={2}>
-                {getReason(selectedLeave)}
-              </Descriptions.Item>
+        <Descriptions.Item label="Admin Remarks" span={2}>
+          {getAdminRemarks(selectedLeave)}
+        </Descriptions.Item>
 
-              <Descriptions.Item label="Admin Remarks" span={2}>
-                {getAdminRemarks(selectedLeave)}
-              </Descriptions.Item>
+      </Descriptions>
 
-            </Descriptions>
+      {normalizeStatus(selectedLeave.ApprovalStatus) === "pending" && (
+        <div className="leave-pending-notice">
+          <ClockCircleOutlined />
+          Your leave request is awaiting administrator approval.
+        </div>
+      )}
 
-            {normalizeStatus(selectedLeave.ApprovalStatus) === "pending" && (
-              <div className="leave-pending-notice">
-                <ClockCircleOutlined />
-                Your leave request is awaiting administrator approval.
-              </div>
-            )}
-
-          </div>
-        )}
-
-      </Modal>
+    </div>
+  )}
+</Modal>
 
     </div>
   );

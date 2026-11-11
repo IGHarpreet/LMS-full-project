@@ -5,6 +5,10 @@ import * as themes from './theme/schema.json';
 import { setToLS } from './utils/storage';
 import { setupAxios } from './shared/api';
 import ErrorBoundary from './components/ErrorBoundary';
+import { initTheme } from './utils/theme';
+
+// apply the saved "ebs-theme" (light by default) before React renders
+initTheme();
 
 // token header, friendly network errors, 401 handling for every axios call
 setupAxios();

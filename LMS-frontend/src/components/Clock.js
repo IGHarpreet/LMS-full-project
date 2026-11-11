@@ -5,12 +5,7 @@ import jwt_decode from '../utils/jwtSafe';
 import {
   MinusCircleOutlined,
   PlusOutlined,
-  DownOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  CheckCircleOutlined,
-  HeartOutlined,
-  SmileOutlined
+
 } from "@ant-design/icons";
 import "../../src/EODModal.css";
 import moment, { duration } from "moment";

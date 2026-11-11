@@ -7,8 +7,9 @@ import Routing from "../components/Routing";
 import Sidebar from "../components/Sidebar";
 import Top from "../components/Top";
 import ErrorBoundary from "../components/ErrorBoundary";
-import { applyTheme } from "../components/Drop";
+import lightVars from "../components/light.json";
 import { isLoggedIn } from "../utils/auth";
+import { applyThemeToDocument, DEFAULT_THEME } from "../utils/theme";
 
 const { Content } = Layout;
 
@@ -51,7 +52,18 @@ const SiteLayout = () => {
   const [, setTick] = useState(0);
 
   useEffect(() => {
-    applyTheme(localStorage.getItem("DARK_MODE") ? "dark" : "light");
+    // Runtime antd less variables (compact sizing) – same call/values as before.
+    try {
+      window.less?.modifyVars(lightVars);
+    } catch (e) {
+      /* less.js is optional (loaded from CDN) */
+    }
+
+    // The "ebs-theme" preference is owned by utils/theme + <Top/>. This effect used
+    // to force data-theme from the legacy DARK_MODE key, which overwrote the saved
+    // theme on every load. Now it only keeps the (light-only) login screen light and
+    // never overwrites the saved preference.
+    if (!isLoggedIn()) applyThemeToDocument(DEFAULT_THEME);
   }, []);
 
   return (
